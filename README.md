@@ -1,4 +1,4 @@
-handson
+Otago Hands-on 
 ===============
 
 Every year the University of Otago runs an event named "Otago hands-on". In this event, different departments advertise one-week projects to which students in the last two years of high-school can apply. Judging the application of the students, the department staff rank the "best" candidates to the advertised projects. On the other hand, the applicants must also rank their preferred projects (as they can apply to multi projects). In the end, a matching list is produced given the ranking provided by both staff and applicants. This matching list will determinate the students that have been selected for the projects of "Otago hands-on". All these tasks are currently handled manually. As of now, all this process is painfully managed through spreadsheets. Your task is to think of a software system that can manage this process.
