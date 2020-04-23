@@ -5,10 +5,54 @@
  */
 package domain;
 
+import java.util.Date;
+
 /**
  *
- * @author Domini
+ * @author Dominic
  */
 public class Application {
-    
+
+    public Application(Student student, Department department, String description, Date date) {
+        this.student = student;
+        this.department = department;
+        this.description = description;
+        this.date = date;
+    }
+    private Student student;
+    private Department department;
+    private String description;
+    private Date date;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

@@ -7,7 +7,7 @@ package WebModules;
 
 /**
  *
- * @author Domini
+ * @author Dominic
  */
 public class StaffModule {
     

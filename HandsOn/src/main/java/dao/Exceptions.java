@@ -8,7 +8,7 @@ package dao;
 
 /**
  *
- * @author Domini
+ * @author Dominic
  */
 public class Exceptions {
     
