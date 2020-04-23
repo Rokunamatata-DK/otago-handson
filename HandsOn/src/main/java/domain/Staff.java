@@ -12,7 +12,14 @@ import java.util.List;
  * @author Dominic
  */
 public class Staff {
-
+    private String userName;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String cellNumber;
+    private List<Department> departments;
+    
     public Staff(String firstName, String lastName, String email, String cellNumber, List<Department> departments) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,11 +27,17 @@ public class Staff {
         this.cellNumber = cellNumber;
         this.departments = departments;
     }
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String cellNumber;
-    private List<Department> departments;
+
+    public Staff(String userName, String password, String firstName, String lastName, String email, String cellNumber, List<Department> departments) {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.cellNumber = cellNumber;
+        this.departments = departments;
+    }
+
 
     public String getFirstName() {
         return firstName;

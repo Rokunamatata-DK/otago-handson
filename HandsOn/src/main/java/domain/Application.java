@@ -12,17 +12,18 @@ import java.util.Date;
  * @author Dominic
  */
 public class Application {
-
+    private Student student;
+    private Department department;
+    private String description;
+    private Date date;
+    
     public Application(Student student, Department department, String description, Date date) {
         this.student = student;
         this.department = department;
         this.description = description;
         this.date = date;
     }
-    private Student student;
-    private Department department;
-    private String description;
-    private Date date;
+
 
     public Student getStudent() {
         return student;

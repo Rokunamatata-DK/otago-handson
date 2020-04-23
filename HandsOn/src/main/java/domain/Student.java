@@ -12,7 +12,15 @@ import java.util.List;
  * @author Dominic
  */
 public class Student {
-
+    private String userName;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String cellNumber;
+    private String studentID;
+    private List<Application> applications;
+    
     public Student(String firstName, String lastName, String email, String cellNumber, String studentID) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -68,10 +76,5 @@ public class Student {
     public void setApplications(List<Application> applications) {
         this.applications = applications;
     }
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String cellNumber;
-    private String studentID;
-    private List<Application> applications;
+
 }
