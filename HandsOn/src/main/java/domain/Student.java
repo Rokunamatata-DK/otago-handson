@@ -19,14 +19,49 @@ public class Student {
     private String email;
     private String cellNumber;
     private String studentID;
+    private String highSchool;
+    private String gender;
     private List<Application> applications;
     
-    public Student(String firstName, String lastName, String email, String cellNumber, String studentID) {
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getHighSchool() {
+        return highSchool;
+    }
+
+    public void setHighSchool(String highSchool) {
+        this.highSchool = highSchool;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+   
+    public Student(String firstName, String lastName, String email, String cellNumber, String studentID, String highSchool) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.cellNumber = cellNumber;
         this.studentID = studentID;
+        this.highSchool = highSchool;
     }
 
     public String getFirstName() {
