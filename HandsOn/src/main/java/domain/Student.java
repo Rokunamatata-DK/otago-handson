@@ -21,12 +21,34 @@ public class Student {
     private String studentID;
     private List<Application> applications;
     
-    public Student(String firstName, String lastName, String email, String cellNumber, String studentID) {
+    public Student(String userName, String firstName, String lastName, String password, String email, String cellNumber, String studentID) {
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
         this.email = email;
         this.cellNumber = cellNumber;
         this.studentID = studentID;
+    }
+
+    public Student() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
