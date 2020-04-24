@@ -14,7 +14,7 @@ import domain.Student;
 /**
  *
  * @author Dominic
- */
+*/
 public class DBStudentJDBC {
     // confirm database URI
     private String databaseURI = "database URI insert here";

@@ -18,6 +18,31 @@ public class Staff {
     private String lastName;
     private String email;
     private String cellNumber;
+    private String gender;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
     private List<Department> departments;
     
     public Staff(String firstName, String lastName, String email, String cellNumber, List<Department> departments) {
