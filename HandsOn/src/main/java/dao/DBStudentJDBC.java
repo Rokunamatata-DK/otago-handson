@@ -27,18 +27,21 @@ public class DBStudentJDBC {
     }
 
     public void save(Student student) {
-        String sql = "INSERT INTO Student (Username, FirstName, LastName, Password, Email, CellNumber, StudentID) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (
                 Connection dbCon = DBConnection.getConnection(databaseURI);
                 PreparedStatement stmt = dbCon.prepareStatement(sql);) {
             stmt.setString(1, student.getUserName());
-            stmt.setString(2, student.getFirstName());
-            stmt.setString(3, student.getLastName());
-            stmt.setString(4, student.getPassword());
+            stmt.setString(2, student.getPassword());
+            stmt.setString(3, student.getFirstName());
+            stmt.setString(4, student.getLastName());
             stmt.setString(5, student.getEmail());
             stmt.setString(6, student.getCellNumber());
             stmt.setString(7, student.getStudentID());
+            stmt.setString(8, student.getHighSchool());
+            stmt.setString(9, student.getGender());
+            
 
             stmt.executeUpdate();
 
@@ -62,12 +65,14 @@ public class DBStudentJDBC {
                 Student student = new Student();
                 
                 student.setUserName("Username");
+                student.setPassword("Password");
                 student.setFirstName("FirstName");
                 student.setLastName("LastName");
-                student.setPassword("Password");
                 student.setEmail("Email");
                 student.setCellNumber("CellNumber");
                 student.setStudentID("StudentID");
+                student.setHighSchool("HighSchool");
+                student.setGender("Gender");
 
                 return student;
             }

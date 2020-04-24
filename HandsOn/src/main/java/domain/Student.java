@@ -27,6 +27,18 @@ public class Student {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public Student(String userName, String password, String firstName, String lastName, String email, String cellNumber, String studentID, String highSchool, String gender) {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.cellNumber = cellNumber;
+        this.studentID = studentID;
+        this.highSchool = highSchool;
+        this.gender = gender;
+    }
+    
     public String getUserName() {
         return userName;
     }
@@ -57,15 +69,6 @@ public class Student {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-   
-    public Student(String firstName, String lastName, String email, String cellNumber, String studentID, String highSchool) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.cellNumber = cellNumber;
-        this.studentID = studentID;
-        this.highSchool = highSchool;
     }
    
     public String getFirstName() {

@@ -10,23 +10,17 @@
 
 create table Student (
     Username varchar(50) not null,
+    Password varchar(50) not null,
     FirstName varchar(50) not null,
     LastName varchar(50) not null,
-    Password varchar(50) not null,
     Email varchar(150) not null,
     CellNumber varchar(50) not null,
     StudentID integer not null,
+    HighSchool varchar(150) not null,
+    Gender varchar(20) not null,
 
     constraint Student_PK primary key (studentID)
 
-    private String userName;
-    private String password;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String cellNumber;
-    private String studentID;
-    private List<Application> applications;
 );
 
     
