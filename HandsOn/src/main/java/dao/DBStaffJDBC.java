@@ -10,5 +10,12 @@ package dao;
  * @author Dominic
  */
 public class DBStaffJDBC {
-    
+    private String databaseURI = "database URI insert here";
+
+    public DBStaffJDBC() {
+    }
+
+    public DBStaffJDBC(String uri) {
+        this.databaseURI = uri;
+    }
 }
