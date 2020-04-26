@@ -134,3 +134,24 @@ div#page {
     font-size: 50px;
     cursor: pointer;
 }
+
+form {
+    margin: auto;
+    padding: 5px;
+    background-color: lightgrey;
+    border-radius: 3px;
+    width: 500px;
+}
+
+form {
+} 
+
+form input[type=text], input[type=password], input[type=email], select {
+    margin-left: 5%;
+    width: 90%;
+}
+
+form input[type=submit] {
+    margin: auto;
+    cursor: pointer;
+}
