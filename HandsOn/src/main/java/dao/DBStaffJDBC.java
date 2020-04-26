@@ -5,11 +5,14 @@
  */
 package dao;
 
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Dominic
  */
-public class DBStaffJDBC {
+@Repository("injectStaff")
+public class DBStaffJDBC implements StaffDAO{
     private String databaseURI = "database URI insert here";
 
     public DBStaffJDBC() {

@@ -5,11 +5,14 @@
  */
 package dao;
 
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Dominic
  */
-public class DBDepartmentJDBC {
+@Repository
+public class DBDepartmentJDBC implements DepartmentDAO{
     private String databaseURI = "database URI insert here";
 
     public DBDepartmentJDBC() {

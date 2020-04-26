@@ -8,12 +8,14 @@ package dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 import org.h2.jdbcx.JdbcConnectionPool;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author vincenttoailoa
  */
-public class DBConnection {
+@Repository
+public class DBConnection implements ConnectionDAO{
     
    private static final String USERNAME = "sa";
    private static final String PASSWORD = "sa";

@@ -10,12 +10,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
+import org.springframework.stereotype.Repository;
+
 
 /**
  *
  * @author Dominic
 */
-public class DBStudentJDBC {
+@Repository("injectStudent")
+public class DBStudentJDBC implements StudentDAO{
     // confirm database URI
     private String databaseURI = "database URI insert here";
 

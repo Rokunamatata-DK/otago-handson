@@ -6,11 +6,13 @@
 package domain;
  
 import java.util.List;
+import org.springframework.stereotype.Repository;
  
 /**
  *
  * @author Dominic
  */
+@Repository
 public class Student {
     private String userName;
     private String password;
