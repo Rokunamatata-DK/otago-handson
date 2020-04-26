@@ -6,22 +6,22 @@
 package WebModules;
 
 import dao.StudentDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.stereotype.Service
 
 /**
  *
  * @author Dominic
  */
-@Service
+//@Service
 public class StudentModule {
-    private final StudentDAO student;
+   // private final StudentDAO student;
     
-    @Autowired
-    public StudentModule(@Qualifier("injectStudent") StudentDAO student) {
-        this.student = student;
-    }
-    
+//    @Autowired
+//    public StudentModule(@Qualifier("injectStudent") StudentDAO student) {
+//        this.student = student;
+//    }
+//    
     
 }
