@@ -6,14 +6,14 @@
 package domain;
  
 import java.util.List;
-import org.springframework.stereotype.Repository;
+//import org.springframework.stereotype.Repository;
  
 /**
  *
  * @author Dominic
  */
-@Repository
-public class Student {
+
+public class Student implements Comparable<Student>  {
     private String userName;
     private String password;
     private String firstName;
@@ -40,6 +40,13 @@ public class Student {
         this.highSchool = highSchool;
         this.gender = gender;
     }
+     @Override
+    public int compareTo(Student o) {
+        return this.email.compareTo(o.getEmail());
+// throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     public String getUserName() {
         return userName;

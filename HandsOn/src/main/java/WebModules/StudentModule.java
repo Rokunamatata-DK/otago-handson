@@ -14,14 +14,13 @@ import org.springframework.stereotype.Service;
  *
  * @author Dominic
  */
-@Service
+//@Service
 public class StudentModule {
-    private final StudentDAO student;
-    
+private final StudentDAO student;
+   
     @Autowired
-    public StudentModule(@Qualifier("injectStudent") StudentDAO student) {
-        this.student = student;
-    }
-    
+   public StudentModule(@Qualifier("injectStudent") StudentDAO student) {
+       this.student = student;
+   }    
     
 }

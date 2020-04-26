@@ -10,27 +10,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
+import java.util.List;
 import org.springframework.stereotype.Repository;
 
 
-/**
- *
- * @author Dominic
-*/
-@Repository("injectStudent")
-public class DBStudentJDBC implements StudentDAO{
-    // confirm database URI
-    private String databaseURI = "database URI insert here";
 
+@Repository("injectStudent")
+public class DBStudentJDBC implements Student_dao_interface{
+    // confirm database URI
+    private String databaseURI = "database URI insert here"; 
+    
     public DBStudentJDBC() {
     }
 
     public DBStudentJDBC(String uri) {
         this.databaseURI = uri;
     }
-
-    public void save(Student student) {
-        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public String getDatabaseURI() {
+        return databaseURI;
+    }
+ 
+    @Override
+    public void create(Student student) {
+       String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (
                 Connection dbCon = DBConnection.getConnection(databaseURI);
@@ -53,8 +55,26 @@ public class DBStudentJDBC implements StudentDAO{
         }
     }
 
-    public Student getStudent(String username) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public List<Student> getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Student getById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+    @Override
+    public Student geyByEmail(String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Student getBysUername(String username) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         // we can choose whether we search with Username or Student ID / Up to the group.
         String sql = "SELECT * FROM Student WHERE Username = ?";
 
@@ -83,8 +103,30 @@ public class DBStudentJDBC implements StudentDAO{
         } catch (SQLException ex) {
             throw new Exceptions(ex.getMessage(), ex);
         }
+
     }
 
+    @Override
+    public void delete(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean exists(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateItem(String id, Student updated_account) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public Boolean validateCredentials(String username, String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
