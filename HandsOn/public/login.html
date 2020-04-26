@@ -28,18 +28,21 @@ and open the template in the editor.
         <div id="header"> <!-- Breadcrumbs for further navigation -->
             <ul id="breadcrumbs">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Log In</a></li>
+                <li>Log In</li>
             </ul>
         </div>
         
         <div id='page'>
             <div id="login_form">
                 <form>
-                    <input type="text" name="username" placeholder="Username" autofocus required/>
-                    <br>
-                    <input type="password" name="password" placeholder="Password" required/>
-                    <br>
-                    <input type="submit" value="Sign in"> 
+                    <fieldset>
+                        <legend>Log In:</legend>
+                        <input type="text" name="username" placeholder="Username" autofocus required/>
+                        <br>
+                        <input type="password" name="password" placeholder="Password" required/>
+                        <br>
+                        <input type="submit" value="Sign in"> 
+                    </fieldset>
             </form>
             </div>
         </div>

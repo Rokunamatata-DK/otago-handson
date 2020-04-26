@@ -35,38 +35,42 @@ div#sidebar a {
     color: white;
     text-decoration: none;
 }
+div#page {
+    font-family: "Arial", "Helvetica", "sans-serif";
+    margin-left: 200px;
+    background-color: white;
+    width: 80%;
+}
 
 div#header {
     background-color: darkgrey;
-    width: 100%;
+    width: 95%;
 }
 
 #breadcrumbs {
-    width: 100%;
+    padding: 10px;
     list-style: none;
-    background-color: darkgrey;
 }
 
-#breadcrumbs li{
-    background-color: darkgrey;
-    color: white;
+#breadcrumbs li {
+    display: inline;
+    padding-left: 15px;
+}
+
+#breadcrumbs li a{
+    color: black;
     text-decoration: none;
 }
 
-#breadcrumbs li:hover {
-    color: lightgrey;
+#breadcrumbs li a:hover {
+    color: #133569;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.breadcrumbs li+li:before {
-    padding: 10px;
+#breadcrumbs li+li:before {
+    padding-right: 15px;
     content: "/\00a0";
-}
-
-div#page {
-    font-family: "Arial", "Helvetica", "sans-serif";
-    padding-left: 200px;
 }
 
 .img {
@@ -136,22 +140,57 @@ div#page {
 }
 
 form {
+    left: calc(width/2);
+    position: relative;
     margin: auto;
+    margin-left: 25%;
     padding: 5px;
     background-color: lightgrey;
     border-radius: 3px;
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
+    height: 70%
 }
 
-form {
-} 
-
-form input[type=text], input[type=password], input[type=email], select {
+form input[type=text], input[type=password], input[type=email], select { 
+    font-size: 15px;
+    padding: 5px;
     margin-left: 5%;
+    margin-bottom: 5px;
     width: 90%;
+    border: 2px solid lightgrey;
+    border-radius: 3px
+}
+
+form input:focus, select:focus{
+    border: 2px solid darkgrey;
+    -webkit-transition: 0.5s;
+    transition: 0.4s;
 }
 
 form input[type=submit] {
+    padding: 10px;
+    font-size: 20px;
     margin: auto;
     cursor: pointer;
+    width: 20%;
+    border: none;
+}
+
+form input[type=submit]:hover {
+    color: white;
+    background-color: #133569;
+    transition: 0.4s;
+}
+
+fieldset{
+    padding-top: 10px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: lightgrey;
+}
+
+fieldset:hover {
+    border-color: darkgrey;
+    transition: 0.4s;
 }
