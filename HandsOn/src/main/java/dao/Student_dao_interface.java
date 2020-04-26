@@ -33,8 +33,6 @@ public interface Student_dao_interface {
 
     public boolean exists(String id);
 
-    public void save(Student student);
-
     public Boolean validateCredentials(String username, String password);
 
 }

@@ -7,6 +7,7 @@ package dao;
 import domain.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -64,7 +65,19 @@ public class StudentDAO implements Student_dao_interface {
 
     @Override
     public Student getBysUername(String username) {
-          Collection students = accounts.values();
+          Collection<Student> students = accounts.values();
+          
+          for(Student s: students){
+              if(s.getUserName().equals(username)){
+                  return s;
+              }
+          }
+          return null;
+    }
+
+    @Override
+    public Boolean validateCredentials(String username, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
         

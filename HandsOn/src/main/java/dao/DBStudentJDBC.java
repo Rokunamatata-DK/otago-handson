@@ -34,6 +34,34 @@ public class DBStudentJDBC implements Student_dao_interface{
     }
 
     @Override
+    public void create(Student student) {
+       String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, student.getUserName());
+            stmt.setString(2, student.getPassword());
+            stmt.setString(3, student.getFirstName());
+            stmt.setString(4, student.getLastName());
+            stmt.setString(5, student.getEmail());
+            stmt.setString(6, student.getCellNumber());
+            stmt.setString(7, student.getStudentID());
+            stmt.setString(8, student.getHighSchool());
+            stmt.setString(9, student.getGender());
+            
+
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    
+    
+    
+    @Override
     public List<Student> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -61,37 +89,37 @@ public class DBStudentJDBC implements Student_dao_interface{
         return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    public void save(Student student) {
-        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        try (
-                Connection dbCon = DBConnection.getConnection(databaseURI);
-                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
-            stmt.setString(1, student.getUserName());
-            stmt.setString(2, student.getPassword());
-            stmt.setString(3, student.getFirstName());
-            stmt.setString(4, student.getLastName());
-            stmt.setString(5, student.getEmail());
-            stmt.setString(6, student.getCellNumber());
-            stmt.setString(7, student.getStudentID());
-            stmt.setString(8, student.getHighSchool());
-            stmt.setString(9, student.getGender());
-            
-
-            stmt.executeUpdate();
-
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        }
+    @Override
+    public Student getBysUername(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean exists(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateItem(String id, Student updated_account) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+   
 
     public Student getStudent(String username) {
         // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -124,7 +152,7 @@ public class DBStudentJDBC implements Student_dao_interface{
             throw new Exceptions(ex.getMessage(), ex);
         }
     }
-
+    @Override
     public Boolean validateCredentials(String username, String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
