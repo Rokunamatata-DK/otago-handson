@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
+import java.util.List;
 import org.springframework.stereotype.Repository;
 
 
@@ -18,10 +19,13 @@ import org.springframework.stereotype.Repository;
  * @author Dominic
 */
 @Repository("injectStudent")
-public class DBStudentJDBC implements StudentDAO{
+public class DBStudentJDBC implements Student_dao_interface{
     // confirm database URI
     private String databaseURI = "database URI insert here";
 
+    
+    
+    
     public DBStudentJDBC() {
     }
 
@@ -29,6 +33,42 @@ public class DBStudentJDBC implements StudentDAO{
         this.databaseURI = uri;
     }
 
+    @Override
+    public List<Student> getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Student getById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getDatabaseURI() {
+        return databaseURI;
+    }
+
+    @Override
+    public Student geyByEmail(String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDatabaseURI(String databaseURI) {
+        this.databaseURI = databaseURI;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
     public void save(Student student) {
         String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 

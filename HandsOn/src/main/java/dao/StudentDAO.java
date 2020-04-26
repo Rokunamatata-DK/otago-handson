@@ -14,16 +14,18 @@ import java.util.TreeMap;
  *
  * @author Derek Zou
  */
-public class StudentDAO {
-    private static final Map<String, student> accounts = new TreeMap<>();
-
+public class StudentDAO implements Student_dao_interface {
+    
+    private static final Map<String, Student> accounts = new TreeMap<>();
+    private static  final Map<String, Student> map_username = new TreeMap<>();
+    
 	/*
 	 * Some dummy data for testing
 	 */
 	static {
 		if (accounts.isEmpty()) {
-			accounts.put("test1", new student_account( "test1","Green","Widget","test1-high school","male" ));
-                        accounts.put("test2", new student_account( "test2","Yellow","Widgets","test2-high school","female" ));
+			//accounts.put("test1", new Student( "test1","Green","Widget","test1-high school","male" ));
+                       // accounts.put("test2", new Student( "test2","Yellow","Widgets","test2-high school","female" ));
 		}
 	}
 
@@ -32,7 +34,7 @@ public class StudentDAO {
 	 *
 	 * @return All accounts ordered by ID.
 	 */
-	public List<student_account> getAll() {
+	public List<Student> getAll() {
 		return new ArrayList<>(accounts.values());
 	}
 
@@ -41,7 +43,7 @@ public class StudentDAO {
 	 *
 	 * @param  The accounts being added.
 	 */
-	public void create(student_account account) {
+	public void create(Student account) {
 		accounts.put(account.getEmail(), account);
 	}
 
@@ -51,14 +53,21 @@ public class StudentDAO {
 	 * @param id The ID to search for.
 	 * @return The accounts matching the given ID, or null if no match found.
 	 */
-	public student_account getById(String id) {
+	public Student getById(String id) {
 		return accounts.get(id);
 	}
 
         //testing
-        public student_account geyByEmail(String email){
-            return null;
+        public Student geyByEmail(String email){
+            return accounts.get(email);
         }
+
+    @Override
+    public Student getBysUername(String username) {
+          Collection students = accounts.values();
+    }
+        
+        
         
 	/**
 	 * Deletes a accounts.
@@ -75,7 +84,7 @@ public class StudentDAO {
 	 * @param id The ID of the product to replace.
 	 * @param updatedProduct The product to replace it with.
 	 */
-	public void updateItem(String id, student_account updated_account) {
+	public void updateItem(String id, Student updated_account) {
 		accounts.put(id, updated_account);
 	}
 
