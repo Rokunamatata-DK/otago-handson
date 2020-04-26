@@ -12,7 +12,7 @@ public class HandsOnApplication {
     
     public HandsOnApplication() {
 
-		StudentDAO dao = new StudentDAO();
+		Student_dao_interface dao = new StudentDAO();
 
 //		port(8080);
 //
