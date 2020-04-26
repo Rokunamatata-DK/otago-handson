@@ -18,10 +18,7 @@ import org.springframework.stereotype.Repository;
 @Repository("injectStudent")
 public class DBStudentJDBC implements Student_dao_interface{
     // confirm database URI
-    private String databaseURI = "database URI insert here";
-
-    
-    
+    private String databaseURI = "database URI insert here"; 
     
     public DBStudentJDBC() {
     }
@@ -29,7 +26,7 @@ public class DBStudentJDBC implements Student_dao_interface{
     public DBStudentJDBC(String uri) {
         this.databaseURI = uri;
     }
- public String getDatabaseURI() {
+    public String getDatabaseURI() {
         return databaseURI;
     }
  
@@ -58,9 +55,6 @@ public class DBStudentJDBC implements Student_dao_interface{
         }
     }
 
-    
-    
-    
     @Override
     public List<Student> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -77,10 +71,6 @@ public class DBStudentJDBC implements Student_dao_interface{
     public Student geyByEmail(String email) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-  
-
-   
 
     @Override
     public Student getBysUername(String username) {
@@ -113,9 +103,7 @@ public class DBStudentJDBC implements Student_dao_interface{
         } catch (SQLException ex) {
             throw new Exceptions(ex.getMessage(), ex);
         }
-        
-        
-        
+
     }
 
     @Override
@@ -123,8 +111,6 @@ public class DBStudentJDBC implements Student_dao_interface{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-    
     @Override
     public boolean exists(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -140,19 +126,6 @@ public class DBStudentJDBC implements Student_dao_interface{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-   
-
-   
     @Override
     public Boolean validateCredentials(String username, String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
