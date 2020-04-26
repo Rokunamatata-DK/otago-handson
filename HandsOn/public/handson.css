@@ -18,6 +18,7 @@ img#otago_logo {
     position: relative;
     float: left;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 div#sidebar {
