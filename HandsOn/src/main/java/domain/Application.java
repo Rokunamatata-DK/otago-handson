@@ -23,6 +23,7 @@ public class Application {
         this.description = description;
         this.date = date;
     }
+    
 
 
     public Student getStudent() {

@@ -11,13 +11,19 @@ import java.util.List;
  *
  * @author Dominic
  */
-public class Department {
+public class Department implements Comparable<Department>{
     private String departmentName;
     private List<Application> applications;
     private String departmentID;
     
     public Department(String departmentName) {
         this.departmentName = departmentName;
+    }
+    
+     @Override
+    public int compareTo(Department o) {
+        return this.departmentID.compareTo(o.getDepartmentName());
+// throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

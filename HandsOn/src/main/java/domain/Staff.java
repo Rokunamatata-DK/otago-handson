@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Dominic
  */
-public class Staff {
+public class Staff implements Comparable<Staff>{
     private String userName;
     private String password;
     private String firstName;
@@ -61,6 +61,12 @@ public class Staff {
         this.email = email;
         this.cellNumber = cellNumber;
         this.departments = departments;
+    }
+    
+    @Override
+    public int compareTo(Staff o) {
+        return this.email.compareTo(o.getEmail());
+// throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
