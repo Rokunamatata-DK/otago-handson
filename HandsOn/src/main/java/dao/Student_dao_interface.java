@@ -23,7 +23,7 @@ public interface Student_dao_interface {
 
     public Student getById(String id);
 
-    public Student geyByEmail(String email);
+    public Student getByEmail(String email);
 
     public Student getBysUername(String username);
 
@@ -36,3 +36,4 @@ public interface Student_dao_interface {
     public Boolean validateCredentials(String username, String password);
 
 }
+

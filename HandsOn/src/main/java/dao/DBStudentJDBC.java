@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
 @Repository("injectStudent")
 public class DBStudentJDBC implements Student_dao_interface{
     // confirm database URI
-    private String databaseURI = "database URI insert here"; 
+    private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 
     
     public DBStudentJDBC() {
     }
@@ -68,7 +68,7 @@ public class DBStudentJDBC implements Student_dao_interface{
    
 
     @Override
-    public Student geyByEmail(String email) {
+    public Student getByEmail(String email) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -110,4 +110,10 @@ public class StudentDAO implements Student_dao_interface {
 	public boolean exists(String id) {
 		return accounts.containsKey(id);
 	}
+
+    @Override
+    public Student getByEmail(String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+
