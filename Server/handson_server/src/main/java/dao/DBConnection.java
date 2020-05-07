@@ -7,14 +7,13 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import org.h2.jdbcx.JdbcConnectionPool;
-import org.springframework.stereotype.Repository;
+
 
 /**
  *
  * @author vincenttoailoa
- */
-@Repository
+ 
+
 public class DBConnection implements ConnectionDAO{
     
    private static final String USERNAME = "sa";
@@ -31,14 +30,16 @@ public class DBConnection implements ConnectionDAO{
          pool = JdbcConnectionPool.create(uri, USERNAME, PASSWORD);
       }
 
-      try {
-         return pool.getConnection();
-      } catch (SQLException ex) {
-         throw new RuntimeException(ex);
-      }
+      return pool.getConnection();
    }
 
    public static String getDefaultConnectionUri() {
       return DEFAULT_URI;
    }
 }
+* 
+*/
+
+
+
+
