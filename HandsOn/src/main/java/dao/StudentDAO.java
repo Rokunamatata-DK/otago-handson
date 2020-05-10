@@ -69,7 +69,7 @@ public class StudentDAO implements StudentDAOInterface {
     }
 
     @Override
-    public Student getByUername(String username) {
+    public Student getByUsername(String username) {
      for(int i = 0; i<students.size(); i++){
             if (students.get(i).getUserName().equals(username)){
                 return students.get(i);
@@ -120,6 +120,7 @@ public class StudentDAO implements StudentDAOInterface {
         return false;
     }
 }
+
 
 
 

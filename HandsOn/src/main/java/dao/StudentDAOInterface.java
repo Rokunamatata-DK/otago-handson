@@ -34,7 +34,7 @@ public interface StudentDAOInterface {
  
     Student getById(String id);
  
-    Student getByUername(String username);
+    Student getByUsername(String username);
 
     int updateItem(String id, Student updated_account);
 
