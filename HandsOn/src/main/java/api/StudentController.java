@@ -21,7 +21,7 @@ import server.StudentService;
  *
  * @author Domini
  */
-@RequestMapping("api/v1/person")
+@RequestMapping("api/v1/student")
 @RestController
 public class StudentController {
     private final StudentService studentService;
