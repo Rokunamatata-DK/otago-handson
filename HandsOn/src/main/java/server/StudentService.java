@@ -24,6 +24,9 @@ private final StudentDAOInterface student;
    public StudentService(@Qualifier("injectStudent") StudentDAOInterface student) {
        this.student = student;
    }    
+   public Student getStudentByID(String id){
+       return this.student.getById(id);
+   }
    
    public int addStudent(Student student){
        return this.student.saveStudent(student);
@@ -31,6 +34,10 @@ private final StudentDAOInterface student;
    
    public int updateStudent(String id, Student student){
        return this.student.updateItem(id, student);
+   }
+   
+   public int deleteStudent(String id){
+       return this.student.delete(id);
    }
     
 }

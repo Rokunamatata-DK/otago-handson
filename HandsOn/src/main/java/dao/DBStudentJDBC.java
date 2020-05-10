@@ -155,7 +155,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
-    public void delete(String id) {
+    public int delete(String id) {
         String sql = "delete from student where id = ?";
 
         try (
@@ -174,6 +174,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
         } catch (SQLException ex) {
             throw new Exceptions(ex.getMessage(), ex);
         }    
+       return 1;
     }
 
     @Override

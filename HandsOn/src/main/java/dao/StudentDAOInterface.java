@@ -24,7 +24,7 @@ public interface StudentDAOInterface {
     
     int saveStudent(Student student);
 
-    void delete(String id);
+    int delete(String id);
 
     boolean exists(String id);
 

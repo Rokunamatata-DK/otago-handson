@@ -79,12 +79,13 @@ public class StudentDAO implements StudentDAOInterface {
     }
 
     @Override
-    public void delete(String id) {
+    public int delete(String id) {
         for(int i = 0; i<students.size(); i++){
             if (students.get(i).getStudentID().equals(id)){
                 students.remove(i);
             }
         }
+        return 1;
     }
 
     @Override
