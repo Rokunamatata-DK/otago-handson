@@ -5,10 +5,30 @@
  */
 package dao;
 
+import domain.Staff;
+import domain.Student;
+import java.util.List;
+
 /**
  *
  * @author Domini
  */
 public interface StaffDAO {
-    
+    int saveStaff(Staff staff);
+
+    int delete(String id);
+
+    boolean exists(String id);
+
+    List<Staff> getAll();
+
+    Staff getByEmail(String email);
+ 
+    Staff getById(String id);
+ 
+    Staff getByUsername(String username);
+
+    int updateItem(String id, Staff updated_account);
+
+    Boolean validateCredentials(String username, String password);
 }

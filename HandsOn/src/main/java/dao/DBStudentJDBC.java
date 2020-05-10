@@ -179,7 +179,22 @@ public class DBStudentJDBC implements StudentDAOInterface {
  
     @Override
     public boolean exists(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM Student WHERE id = ?";
+ 
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+ 
+            if (rs.next()) {
+
+                return true;
+            }
+            return false;
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }
     }
  
     @Override
