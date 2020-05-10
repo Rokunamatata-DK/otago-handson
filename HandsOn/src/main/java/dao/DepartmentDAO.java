@@ -5,10 +5,21 @@
  */
 package dao;
 
+import domain.Application;
+import domain.Department;
+import java.util.List;
+
 /**
  *
  * @author Domini
  */
 public interface DepartmentDAO {
-    
+    int createDepartment(Department department);
+
+    int delete(String departmentName);
+
+    boolean exists(String id);
+
+    List<Department> getDepartmentList();
+
 }

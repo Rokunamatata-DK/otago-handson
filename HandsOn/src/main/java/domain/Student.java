@@ -43,7 +43,7 @@ public class Student implements Comparable<Student>  {
         this.cellNumber = cellNumber;
         this.id = studentID;
         this.highSchool = highSchool;
-        this.gender = gender;
+        this.gender = gender;       
     }
      @Override
     public int compareTo(Student o) {

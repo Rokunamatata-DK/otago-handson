@@ -15,6 +15,7 @@ public class Department implements Comparable<Department>{
     private String departmentName;
     private List<Application> applications;
     private String departmentID;
+
     
     public Department(String departmentName) {
         this.departmentName = departmentName;

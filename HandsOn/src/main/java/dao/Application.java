@@ -5,44 +5,37 @@
  */
 package dao;
 
-import domain.Application;
-import domain.Department;
 import java.util.List;
-import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Dominic
+ * @author Domini
  */
-@Repository
-public class DBDepartmentJDBC implements DepartmentDAO{
-    private String databaseURI = "database URI insert here";
-
-    public DBDepartmentJDBC() {
-    }
-
-    public DBDepartmentJDBC(String uri) {
-        this.databaseURI = uri;
-    }
+public class Application implements ApplicationDAO{
 
     @Override
-    public int createDepartment(Department department) {
+    public List<domain.Application> getAllByDepartment(String department) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int delete(String departmentName) {
+    public List<domain.Application> getAllByStudent(String studentId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean exists(String id) {
+    public int addApplication(domain.Application application) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Department> getDepartmentList() {
+    public int removeApplication(String studentid, String appNumber) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public int getRankedApplication(String department, String rank) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
