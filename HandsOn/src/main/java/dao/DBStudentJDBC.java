@@ -12,11 +12,12 @@ import java.sql.SQLException;
 import domain.Student;
 import java.util.List;
 import java.util.Objects;
+import org.springframework.stereotype.Repository;
 
 
 
 
-
+@Repository("jdbcStudent")
 public class DBStudentJDBC implements StudentDAOInterface {
     // confirm database URI
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 
@@ -31,7 +32,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
         return databaseURI;
     }
  
-    public void create(Student student) {
+    public int saveStudent(Student student) {
        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (
@@ -53,12 +54,10 @@ public class DBStudentJDBC implements StudentDAOInterface {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+        return 1;
     }
 
-    @Override
-    public Student getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     @Override
     public Student getById(String id) {
@@ -131,8 +130,9 @@ public class DBStudentJDBC implements StudentDAOInterface {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+
     @Override
-    public void saveStudent(Student student) {
+    public List<Student> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

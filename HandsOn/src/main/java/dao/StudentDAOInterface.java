@@ -22,7 +22,7 @@ public interface StudentDAOInterface {
      */
      //void create(Student account);
     
-    void saveStudent(Student student);
+    int saveStudent(Student student);
 
     void delete(String id);
 

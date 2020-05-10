@@ -24,11 +24,13 @@ public class StudentDAO implements StudentDAOInterface {
     private static List<Student> students = new ArrayList<>();
     
 
-    public void saveStudent(Student student){
+    @Override
+    public int saveStudent(Student student){
         //accounts.add(student);
         //usernameMap.put(student.getStudentID(), student);
         System.out.println("Saving student: " + student);
         students.add(student);
+        return 1;
     }
     
     public List<Student> getAll() {
