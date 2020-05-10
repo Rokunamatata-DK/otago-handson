@@ -19,7 +19,7 @@ import server.StudentService;
 
 /**
  *
- * @author Domini
+ * @author Dominic
  */
 @RequestMapping("api/v1/student")
 @RestController
