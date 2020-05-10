@@ -42,9 +42,9 @@ public class StudentDAOTest {
     
     @After
     public void tearDown() {
-        dao.removeStudent(studentOne);
-        dao.removeStudent(studentTwo);
-        dao.removeStudent(studentThree);
+        //dao.removeStudent(studentOne);
+        //dao.removeStudent(studentTwo);
+        //dao.removeStudent(studentThree);
         
     }
 
