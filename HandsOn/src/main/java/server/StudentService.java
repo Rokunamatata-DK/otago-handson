@@ -21,7 +21,7 @@ public class StudentService {
 private final StudentDAOInterface student;
    
     @Autowired
-   public StudentService(@Qualifier("injectStudent") StudentDAOInterface student) {
+   public StudentService(@Qualifier("jdbcStudent") StudentDAOInterface student) {
        this.student = student;
    }    
    public Student getStudentByID(String id){
