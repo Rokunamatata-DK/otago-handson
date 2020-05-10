@@ -5,115 +5,130 @@
  */
 package dao;
 import domain.*;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 /**
  *
  * @author Derek Zou
  */
-public class StudentDAO implements Student_dao_interface {
+public class StudentDAO implements StudentDAOInterface {
     
-    private static final Map<String, Student> accounts = new TreeMap<>();
-    private static  final Map<String, Student> map_username = new TreeMap<>();
+    //private static final Map<String, Student> accounts = new TreeMap<>();
+    //private Collection<Student> accounts = new HashSet<Student>();
+    //private Map<String, Student> usernameMap = new HashMap<>();
+    //private static  final Map<String, Student> usernameMap = new TreeMap<>();
     
-	/*
-	 * Some dummy data for testing
-	 */
-	static {
-		if (accounts.isEmpty()) {
-			//accounts.put("test1", new Student( "test1","Green","Widget","test1-high school","male" ));
-                       // accounts.put("test2", new Student( "test2","Yellow","Widgets","test2-high school","female" ));
-		}
-	}
+    // customers stored by username
+    private static final Map<String, Student> students = new HashMap<>();
+    
 
-	/**
-	 * Gets all Account
-	 *
-	 * @return All accounts ordered by ID.
-	 */
-	public List<Student> getAll() {
-		return new ArrayList<>(accounts.values());
-	}
+    public void saveStudent(Student student){
+        //accounts.add(student);
+        //usernameMap.put(student.getStudentID(), student);
+        System.out.println("Saving student: " + student);
+        students.put(student.getUserName(), student);
+    }
+    
+    @Override
+    public Student getAll() {
+            return (Student) students;
+    }
 
-	/**
-	 * Adds a account to the accounts.
-	 *
-	 * @param  The accounts being added.
-	 */
-	public void create(Student account) {
-		accounts.put(account.getEmail(), account);
-	}
-
-	/**
-	 * Gets a single accounts that matches the given ID.
-	 *
-	 * @param id The ID to search for.
-	 * @return The accounts matching the given ID, or null if no match found.
-	 */
-	public Student getById(String id) {
-		return accounts.get(id);
-	}
-
-        //testing
-        public Student geyByEmail(String email){
-            return accounts.get(email);
-        }
+    /**
+     * Adds a account to the accounts.
+     *
+     * @param  The accounts being added.
+     */
+    //@Override
+    //public void create(Student account) {
+    //        accounts.put(account.getEmail(), account);
+    // }
 
     @Override
-    public Student getBysUername(String username) {
-          Collection<Student> students = accounts.values();
-          
-          for(Student s: students){
-              if(s.getUserName().equals(username)){
-                  return s;
-              }
-          }
-          return null;
+    public Student getById(String id) {
+        return students.get(id);
+    // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Student getByEmail(String email){
+        return students.get(email);
+    }
+
+    @Override
+    public Student getByUername(String username) {
+        return students.get(username);
+    }
+
+    @Override
+    public void delete(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean exists(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateItem(String id, Student updated_account) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Boolean validateCredentials(String username, String password) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-        
-        
-        
-	/**
-	 * Deletes a accounts.
-	 *
-	 * @param id The ID of the product to delete.
-	 */
-	public void delete(String id) {
-		accounts.remove(id);
-	}
-
-	/**
-	 * Updates a product (effectively replaces it).
-	 *
-	 * @param id The ID of the product to replace.
-	 * @param updatedProduct The product to replace it with.
-	 */
-	public void updateItem(String id, Student updated_account) {
-		accounts.put(id, updated_account);
-	}
-
-	/**
-	 * Checks if a Account exists.
-	 *
-	 * @param id The ID of the product being checked.
-	 * @return <code>true</code> if product exists, <code>false</code> if not.
-	 */
-	public boolean exists(String id) {
-		return accounts.containsKey(id);
-	}
-
-    @Override
-    public Student getByEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

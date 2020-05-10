@@ -11,12 +11,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
 import java.util.List;
-import org.springframework.stereotype.Repository;
+import java.util.Objects;
 
 
 
-@Repository("injectStudent")
-public class DBStudentJDBC implements Student_dao_interface{
+
+
+public class DBStudentJDBC implements StudentDAOInterface {
     // confirm database URI
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 
     
@@ -30,7 +31,6 @@ public class DBStudentJDBC implements Student_dao_interface{
         return databaseURI;
     }
  
-    @Override
     public void create(Student student) {
        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -56,7 +56,7 @@ public class DBStudentJDBC implements Student_dao_interface{
     }
 
     @Override
-    public List<Student> getAll() {
+    public Student getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -73,7 +73,7 @@ public class DBStudentJDBC implements Student_dao_interface{
     }
 
     @Override
-    public Student getBysUername(String username) {
+    public Student getByUername(String username) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         // we can choose whether we search with Username or Student ID / Up to the group.
         String sql = "SELECT * FROM Student WHERE Username = ?";
@@ -128,6 +128,11 @@ public class DBStudentJDBC implements Student_dao_interface{
 
     @Override
     public Boolean validateCredentials(String username, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void saveStudent(Student student) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
