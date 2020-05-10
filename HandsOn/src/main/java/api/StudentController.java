@@ -7,7 +7,9 @@ package api;
 
 import domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,5 +34,8 @@ public class StudentController {
         studentService.addStudent(student);
     }
     
-    
+    @PutMapping(path = {"id"})
+    public void updateStudent(@PathVariable("id") String id, @RequestBody Student student){
+        studentService.updateStudent(id, student);
+    }
 }

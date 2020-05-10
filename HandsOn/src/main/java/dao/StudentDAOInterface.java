@@ -36,7 +36,7 @@ public interface StudentDAOInterface {
 
     Student getByUername(String username);
 
-    void updateItem(String id, Student updated_account);
+    int updateItem(String id, Student updated_account);
 
     Boolean validateCredentials(String username, String password);
     

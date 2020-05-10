@@ -5,7 +5,8 @@
  */
 package server;
 
-import dao.StudentDAO;
+
+import dao.StudentDAOInterface;
 import domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,15 +18,19 @@ import org.springframework.stereotype.Service;
  */
 //@Service
 public class StudentService {
-private final StudentDAO student;
+private final StudentDAOInterface student;
    
     @Autowired
-   public StudentService(@Qualifier("injectStudent") StudentDAO student) {
+   public StudentService(@Qualifier("injectStudent") StudentDAOInterface student) {
        this.student = student;
    }    
    
    public int addStudent(Student student){
        return this.student.saveStudent(student);
+   }
+   
+   public int updateStudent(String id, Student student){
+       return this.student.updateItem(id, student);
    }
     
 }

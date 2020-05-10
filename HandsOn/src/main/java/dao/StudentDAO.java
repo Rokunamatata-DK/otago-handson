@@ -98,12 +98,13 @@ public class StudentDAO implements StudentDAOInterface {
     }
 
     @Override
-    public void updateItem(String id, Student updated_account) {
+    public int updateItem(String id, Student updated_account) {
         for(int i = 0; i<students.size(); i++){
             if (students.get(i).getStudentID().equals(id)){
                 students.set(i, updated_account);
             }
         }
+        return 1;
     }
 
     @Override

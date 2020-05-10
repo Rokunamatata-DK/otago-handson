@@ -187,7 +187,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
-    public void updateItem(String id, Student updated_account) {
+    public int updateItem(String id, Student updated_account) {
         delete(id);
            String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -209,6 +209,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+        return 1;
     }
 
     @Override
