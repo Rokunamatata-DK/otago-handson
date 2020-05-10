@@ -22,7 +22,17 @@ public class Staff implements Comparable<Staff>{
     private String staffID;
 
     public Staff() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+
+    public Staff(String username, String password, String firstName, String lastname, String email, String cellnumber, String gender, String id) {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.cellNumber = cellNumber;
+        this.staffID = staffID;
     }
 
     public String getStaffID() {
@@ -67,14 +77,14 @@ public class Staff implements Comparable<Staff>{
         this.staffID = staffID;
     }
 
-    public Staff(String userName, String password, String firstName, String lastName, String email, String cellNumber, List<Department> departments) {
+    public Staff(String userName, String password, String firstName, String lastName, String email, String cellNumber, String staffID) {
         this.userName = userName;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.cellNumber = cellNumber;
-        this.departments = departments;
+        this.staffID = staffID;
     }
     
     @Override

@@ -58,7 +58,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
  
     @Override
     public Student getById(String id) {
-        String sql = "SELECT * FROM Student WHERE id = ?";
+        String sql = "SELECT * FROM Student WHERE studentid = ?";
  
         try (
                 Connection dbCon = DBConnection.getConnection(databaseURI);
@@ -69,15 +69,15 @@ public class DBStudentJDBC implements StudentDAOInterface {
             if (rs.next()) {
                 Student student = new Student();
                 
-                student.setUserName("Username");
-                student.setPassword("Password");
-                student.setFirstName("FirstName");
-                student.setLastName("LastName");
-                student.setEmail("Email");
-                student.setCellNumber("CellNumber");
-                student.setStudentID("StudentID");
-                student.setHighSchool("HighSchool");
-                student.setGender("Gender");
+                student.setUserName(rs.getString("username"));
+                student.setPassword(rs.getString("Password"));
+                student.setFirstName(rs.getString("FirstName"));
+                student.setLastName(rs.getString("LastName"));
+                student.setEmail(rs.getString("Email"));
+                student.setCellNumber(rs.getString("CellNumber"));
+                student.setStudentID(rs.getString("StudentID"));
+                student.setHighSchool(rs.getString("HighSchool"));
+                student.setGender(rs.getString("Gender"));
  
                 return student;
             }
@@ -102,15 +102,15 @@ public class DBStudentJDBC implements StudentDAOInterface {
             if (rs.next()) {
                 Student student = new Student();
                 
-                student.setUserName("Username");
-                student.setPassword("Password");
-                student.setFirstName("FirstName");
-                student.setLastName("LastName");
-                student.setEmail("Email");
-                student.setCellNumber("CellNumber");
-                student.setStudentID("StudentID");
-                student.setHighSchool("HighSchool");
-                student.setGender("Gender");
+                student.setUserName(rs.getString("username"));
+                student.setPassword(rs.getString("Password"));
+                student.setFirstName(rs.getString("FirstName"));
+                student.setLastName(rs.getString("LastName"));
+                student.setEmail(rs.getString("Email"));
+                student.setCellNumber(rs.getString("CellNumber"));
+                student.setStudentID(rs.getString("StudentID"));
+                student.setHighSchool(rs.getString("HighSchool"));
+                student.setGender(rs.getString("Gender"));
  
                 return student;
             }
@@ -135,15 +135,15 @@ public class DBStudentJDBC implements StudentDAOInterface {
             if (rs.next()) {
                 Student student = new Student();
                 
-                student.setUserName("Username");
-                student.setPassword("Password");
-                student.setFirstName("FirstName");
-                student.setLastName("LastName");
-                student.setEmail("Email");
-                student.setCellNumber("CellNumber");
-                student.setStudentID("StudentID");
-                student.setHighSchool("HighSchool");
-                student.setGender("Gender");
+                student.setUserName(rs.getString("username"));
+                student.setPassword(rs.getString("Password"));
+                student.setFirstName(rs.getString("FirstName"));
+                student.setLastName(rs.getString("LastName"));
+                student.setEmail(rs.getString("Email"));
+                student.setCellNumber(rs.getString("CellNumber"));
+                student.setStudentID(rs.getString("StudentID"));
+                student.setHighSchool(rs.getString("HighSchool"));
+                student.setGender(rs.getString("Gender"));
  
                 return student;
             }
@@ -156,7 +156,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
  
     @Override
     public int delete(String id) {
-        String sql = "delete from student where id = ?";
+        String sql = "delete from student where studentid = ?";
  
         try (
                 // get a connection to the database
@@ -179,7 +179,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
  
     @Override
     public boolean exists(String id) {
-        String sql = "SELECT * FROM Student WHERE id = ?";
+        String sql = "SELECT * FROM Student WHERE studentid = ?";
  
         try (
                 Connection dbCon = DBConnection.getConnection(databaseURI);

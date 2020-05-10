@@ -103,22 +103,108 @@ public class DBStaffJDBC implements StaffDAO{
 
     @Override
     public Staff getByEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String sql = "SELECT * FROM staff WHERE email = ?";
+ 
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+ 
+            if (rs.next()) {
+                Staff staff = new Staff();
+                
+                staff.setUserName(rs.getString("username"));
+                staff.setPassword(rs.getString("Password"));
+                staff.setFirstName(rs.getString("FirstName"));
+                staff.setLastName(rs.getString("LastName"));
+                staff.setEmail(rs.getString("Email"));
+                staff.setCellNumber(rs.getString("CellNumber"));
+                staff.setGender(rs.getString("Gender"));
+                staff.setStaffID(rs.getString("id"));
+                return staff;
+            }
+            return null;
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }    }
 
     @Override
     public Staff getById(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM staff WHERE id = ?";
+ 
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+ 
+            if (rs.next()) {
+                Staff staff = new Staff();
+                
+                staff.setUserName(rs.getString("username"));
+                staff.setPassword(rs.getString("Password"));
+                staff.setFirstName(rs.getString("FirstName"));
+                staff.setLastName(rs.getString("LastName"));
+                staff.setEmail(rs.getString("Email"));
+                staff.setCellNumber(rs.getString("CellNumber"));
+                staff.setGender(rs.getString("Gender"));
+                staff.setStaffID(rs.getString("id"));
+ 
+                return staff;
+            }
+            return null;
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }    
     }
 
     @Override
     public Staff getByUsername(String username) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String sql = "SELECT * FROM staff WHERE Username = ?";
+ 
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+ 
+            if (rs.next()) {
+                Staff staff = new Staff(rs.getString("Username"), rs.getString("Password"), 
+                rs.getString("FirstName"), rs.getString("LastName"),
+                rs.getString("Email"), rs.getString("CellNumber"), rs.getString("Gender"), rs.getString("id"));
+                
+ 
+                return staff;
+            }
+            return null;
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }    }
 
     @Override
-    public int updateItem(String id, Staff updated_account) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int updateItem(String id, Staff staff) {
+                delete(id);
+           String sql = "INSERT INTO Staff (Username, Password, FirstName, LastName, Email, CellNumber, Gender, id) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+ 
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, staff.getUserName());
+            stmt.setString(2, staff.getPassword());
+            stmt.setString(3, staff.getFirstName());
+            stmt.setString(4, staff.getLastName());
+            stmt.setString(5, staff.getEmail());
+            stmt.setString(6, staff.getCellNumber());
+            stmt.setString(7, staff.getGender());
+            stmt.setString(8, staff.getStaffID());
+            
+            stmt.executeUpdate();
+ 
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        return 1;
     }
 
     @Override
