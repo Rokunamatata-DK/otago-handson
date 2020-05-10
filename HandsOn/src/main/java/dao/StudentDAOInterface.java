@@ -28,7 +28,7 @@ public interface StudentDAOInterface {
 
     boolean exists(String id);
 
-    Student getAll();
+    List<Student> getAll();
 
     Student getByEmail(String email);
 

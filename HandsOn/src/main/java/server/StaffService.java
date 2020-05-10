@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package WebModules;
+package server;
 
 import dao.StaffDAO;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import dao.StaffDAO;
  * @author Dominic
  */
 //@Service
-public class StaffModule {
+public class StaffService {
   //  private final StaffDAO staffDAO;
     
 //    @Autowired

@@ -9,6 +9,6 @@ package api;
  *
  * @author Domini
  */
-public class DepartmentService {
+public class DepartmentController {
     
 }
