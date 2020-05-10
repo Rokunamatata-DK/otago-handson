@@ -23,21 +23,21 @@ public interface StudentDAOInterface {
      //void create(Student account);
     
     int saveStudent(Student student);
- 
+
     int delete(String id);
- 
+
     boolean exists(String id);
- 
+
     List<Student> getAll();
- 
+
     Student getByEmail(String email);
  
     Student getById(String id);
  
     Student getByUername(String username);
- 
+
     int updateItem(String id, Student updated_account);
- 
+
     Boolean validateCredentials(String username, String password);
 
     

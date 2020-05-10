@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package server;
- 
+
 import org.springframework.stereotype.Service;
- 
+
 /**
  *
  * @author Domini
