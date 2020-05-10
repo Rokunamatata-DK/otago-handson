@@ -55,6 +55,7 @@ public class StudentDAOTest {
         dao.saveStudent(studentOne);
         
         // ensure that the data store includes the student
+        assertTrue("Ensure that the student was saved", dao.getAll().contains(studentOne));
        //assertTrue("Ensure that the student was saved", dao.getByUsername("James"));
         
     }

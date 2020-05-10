@@ -37,16 +37,6 @@ public class StudentDAO implements StudentDAOInterface {
             return students;
     }
 
-    /**
-     * Adds a account to the accounts.
-     *
-     * @param  The accounts being added.
-     */
-    //@Override
-    //public void create(Student account) {
-    //        accounts.put(account.getEmail(), account);
-    // }
-
     @Override
     public Student getById(String id) {
         for(int i = 0; i<students.size(); i++){
@@ -120,6 +110,7 @@ public class StudentDAO implements StudentDAOInterface {
         return false;
     }
 }
+
 
 
 
