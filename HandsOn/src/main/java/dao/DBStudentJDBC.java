@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
 import java.util.List;
-import java.util.Objects;
 import org.springframework.stereotype.Repository;
 
 
@@ -22,9 +21,6 @@ public class DBStudentJDBC implements StudentDAOInterface {
     // confirm database URI
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 
     
-    public DBStudentJDBC() {
-    }
-
     public DBStudentJDBC(String uri) {
         this.databaseURI = uri;
     }
@@ -160,7 +156,24 @@ public class DBStudentJDBC implements StudentDAOInterface {
 
     @Override
     public void delete(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "delete from student where id = ?";
+
+        try (
+                // get a connection to the database
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);
+        ) {
+
+             stmt.setString(1, id);
+            // execute the query
+            int rs = stmt.executeUpdate();
+
+
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }    
     }
 
     @Override
@@ -175,7 +188,27 @@ public class DBStudentJDBC implements StudentDAOInterface {
 
     @Override
     public void updateItem(String id, Student updated_account) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        delete(id);
+           String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, updated_account.getUserName());
+            stmt.setString(2, updated_account.getPassword());
+            stmt.setString(3, updated_account.getFirstName());
+            stmt.setString(4, updated_account.getLastName());
+            stmt.setString(5, updated_account.getEmail());
+            stmt.setString(6, updated_account.getCellNumber());
+            stmt.setString(7, updated_account.getStudentID());
+            stmt.setString(8, updated_account.getHighSchool());
+            stmt.setString(9, updated_account.getGender());
+            
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
