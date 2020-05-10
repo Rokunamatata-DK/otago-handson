@@ -56,13 +56,24 @@ public class StudentDAOTest {
         
         // ensure that the data store includes the student
         assertTrue("Ensure that the student was saved", dao.getAll().contains(studentOne));
-       //assertTrue("Ensure that the student was saved", dao.getByUsername("James"));
+        //assertTrue("Ensure that the student was saved", dao.getByUsername("James"));
         
     }
     
-
     @Test
     public void testGetByStudentID() {
+        // fail("Not implemented yet");
+        dao.getById(studentOne.getStudentID());
+        dao.getById(studentTwo.getStudentID());
+        
+        dao.getById(studentOne.getStudentID());
+      
+        // ensure the result includes the two saved products
+        assertTrue("studentOne should exist", dao.getAll().contains(studentOne));
+        assertTrue("studentTwo should exist", dao.getAll().contains(studentTwo));
+      
+        // ensure the result ONLY includes the two saved products
+        assertEquals("Only 2 products in result", 2, dao.getAll().size());
     }
 
     @Test
@@ -80,5 +91,5 @@ public class StudentDAOTest {
     @Test
     public void testValidateCredentials() {
     }
-    
+
 }
