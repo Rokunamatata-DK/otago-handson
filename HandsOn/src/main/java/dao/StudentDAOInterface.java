@@ -7,7 +7,6 @@ package dao;
 
 import domain.Student;
 import java.util.Collection;
-import java.util.List;
 
 /**
  *
@@ -15,29 +14,19 @@ import java.util.List;
  */
 public interface StudentDAOInterface {
 
-    /**
-     * Adds a account to the accounts.
-     *
-     * @param  The accounts being added.
-     */
-     //void create(Student account);
-    
-    void saveStudent(Student student);
-
-    void delete(String id);
-
-    boolean exists(String id);
-
-    Student getAll();
-
     Student getByEmail(String email);
 
-    Student getById(String id);
+    Student getByStudentID(String id);
 
-    Student getByUername(String username);
+    Student getByUsername(String username);
 
-    void updateItem(String id, Student updated_account);
+    void saveStudent(Student student);
+
+    void updateStudent(String id, Student updated_account);
+    
+    void removeStudent(Student student);
 
     Boolean validateCredentials(String username, String password);
+    
     
 }

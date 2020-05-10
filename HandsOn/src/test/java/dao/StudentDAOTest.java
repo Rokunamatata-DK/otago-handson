@@ -6,7 +6,6 @@
 package dao;
 
 import domain.Student;
-import java.util.Collection;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,11 +17,12 @@ import static org.junit.Assert.*;
  */
 public class StudentDAOTest {
     
+    // Create a StudentDAO Object for testing
     private StudentDAOInterface dao = new StudentDAO();
     
-    private Student student1;
-    private Student student2;
-    private Student student3;
+    private Student studentOne;
+    private Student studentTwo;
+    private Student studentThree;
     
     public StudentDAOTest() {
         this.dao = new StudentDAO();
@@ -30,68 +30,58 @@ public class StudentDAOTest {
     
     @Before
     public void setUp() {
-        this.student1 = new Student( "user1","Green","John","Wick","yo@no.com","0293432343", "FK655", "Hillmorton", "Male");
-        this.student2 = new Student( "user2","Alpha","Bob","Titilo","no@yes.com","02234334343", "JBC243", "Shirley", "Male");
-        this.student3 = new Student( "user3","wendys","Jen","Lopez","lesgo@ymail.com","025849837","EZY343", "Otago", "Female");
-        
+        this.studentOne = new Student("James", "pass1", "Jamie", "Roberts", "vinny@gmail.com", "023040432", "4K", "Hillmorton", "Male");
+        this.studentOne = new Student("John", "pass2", "John", "Wick", "wick@gmail.com", "023044444", "43K", "Shirley", "Male");
+        this.studentOne = new Student("Jemma", "pass3", "Jem", "Lofi", "jemjem@gmail.com", "023331232", "2770One", "Villa Maria", "Female");
+    
         // save the students
-        dao.saveStudent(student1);
-        dao.saveStudent(student2);
-        dao.saveStudent(student3);
+        dao.saveStudent(studentOne);
+        dao.saveStudent(studentTwo);
+        dao.saveStudent(studentThree);
     }
     
     @After
     public void tearDown() {
-    }
-
-    //@Test
-    public void testGetAll() {
+        dao.removeStudent(studentOne);
+        dao.removeStudent(studentTwo);
+        dao.removeStudent(studentThree);
         
-        // ensure the result includes the two saved products
-        // assertTrue("student1 should exist", students.contains(student1));
-        // assertTrue("student2 should exist", students.contains(student2));
-        // assertTrue("student3 should exist", students.contains(student3));
-      
-        // ensure the result ONLY includes the two saved products
-        // assertEquals("Only 3 products in result", 3, students.size());
+    }
+
+    @Test
+    public void testSaveStudent() {
         
-        //
+        // save the student using the DAO
+        dao.saveStudent(studentOne);
+        
+        // ensure that the data store includes the student
+       //assertTrue("Ensure that the student was saved", dao.getByUsername("James"));
+        
     }
-
-    //@Test
-    //public void testCreate() {
-    //}
-
+    
     @Test
-    public void testGetById() {
-    }
-
-    @Test
-    public void testGeyByEmail() {
-    }
-
-    @Test
-    public void testGetBysUername() {
+    public void testGetStudents() {
+     
     }
 
     @Test
-    public void testValidateCredentials() {
-    }
-
-    @Test
-    public void testDelete() {
-    }
-
-    @Test
-    public void testUpdateItem() {
-    }
-
-    @Test
-    public void testExists() {
+    public void testGetByStudentID() {
     }
 
     @Test
     public void testGetByEmail() {
+    }
+
+    @Test
+    public void testGetByUsername() {
+    }
+
+    @Test
+    public void testUpdateStudent() {
+    }
+
+    @Test
+    public void testValidateCredentials() {
     }
     
 }

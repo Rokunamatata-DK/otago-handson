@@ -10,18 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
-import java.util.List;
-import java.util.Objects;
-
-
-
-
 
 public class DBStudentJDBC implements StudentDAOInterface {
     // confirm database URI
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 
     
-    public DBStudentJDBC() {
+    public DBStudentJDBC(){
     }
 
     public DBStudentJDBC(String uri) {
@@ -31,7 +25,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
         return databaseURI;
     }
  
-    public void create(Student student) {
+    public void saveStudent(Student student) {
        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (
@@ -56,26 +50,15 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
-    public Student getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Student getById(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
-    @Override
     public Student getByEmail(String email) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Student getByUername(String username) {
+    public Student getByUsername(String username) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        // we can choose whether we search with Username or Student ID / Up to the group.
+        // search for a student using the StudentID as the unique filter
+        
         String sql = "SELECT * FROM Student WHERE Username = ?";
 
         try (
@@ -107,22 +90,7 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
-    public void delete(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean exists(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateItem(String id, Student updated_account) {
+    public void updateStudent(String id, Student updated_account) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -132,7 +100,12 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
-    public void saveStudent(Student student) {
+    public Student getByStudentID(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void removeStudent(Student student) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
