@@ -5,6 +5,7 @@
  */
 package domain;
  
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 //import org.springframework.stereotype.Repository;
  
@@ -20,7 +21,7 @@ public class Student implements Comparable<Student>  {
     private String lastName;
     private String email;
     private String cellNumber;
-    private String studentID;
+    private String id;
     private String highSchool;
     private String gender;
     private List<Application> applications;
@@ -29,14 +30,18 @@ public class Student implements Comparable<Student>  {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public Student(String userName, String password, String firstName, String lastName, String email, String cellNumber, String studentID, String highSchool, String gender) {
+    public Student(@JsonProperty("username")String userName, @JsonProperty("password")String password, 
+            @JsonProperty("firstname")String firstName, @JsonProperty("lastname")String lastName, 
+            @JsonProperty("email")String email, @JsonProperty("cell")String cellNumber, 
+            @JsonProperty("id")String studentID, @JsonProperty("highschool")String highSchool, 
+            @JsonProperty("gender")String gender) {
         this.userName = userName;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.cellNumber = cellNumber;
-        this.studentID = studentID;
+        this.id = studentID;
         this.highSchool = highSchool;
         this.gender = gender;
     }
@@ -113,11 +118,11 @@ public class Student implements Comparable<Student>  {
     }
  
     public String getStudentID() {
-        return studentID;
+        return id;
     }
  
     public void setStudentID(String studentID) {
-        this.studentID = studentID;
+        this.id = studentID;
     }
  
     public List<Application> getApplications() {
