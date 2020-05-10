@@ -10,14 +10,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
+import java.util.List;
+import org.springframework.stereotype.Repository;
 
+
+
+
+@Repository("jdbcStudent")
 public class DBStudentJDBC implements StudentDAOInterface {
     // confirm database URI
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 
     
-    public DBStudentJDBC(){
-    }
-
     public DBStudentJDBC(String uri) {
         this.databaseURI = uri;
     }
@@ -25,7 +28,8 @@ public class DBStudentJDBC implements StudentDAOInterface {
         return databaseURI;
     }
  
-    public void saveStudent(Student student) {
+    @Override
+    public int saveStudent(Student student) {
        String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (
@@ -47,14 +51,74 @@ public class DBStudentJDBC implements StudentDAOInterface {
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
+        return 1;
     }
+
+
+
+    public Student getById(String id) {
+        String sql = "SELECT * FROM Student WHERE id = ?";
+
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Student student = new Student();
+                
+                student.setUserName("Username");
+                student.setPassword("Password");
+                student.setFirstName("FirstName");
+                student.setLastName("LastName");
+                student.setEmail("Email");
+                student.setCellNumber("CellNumber");
+                student.setStudentID("StudentID");
+                student.setHighSchool("HighSchool");
+                student.setGender("Gender");
+
+                return student;
+            }
+            return null;
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }
+    }
+
+   
 
     @Override
     public Student getByEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM Student WHERE email = ?";
+
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Student student = new Student();
+                
+                student.setUserName("Username");
+                student.setPassword("Password");
+                student.setFirstName("FirstName");
+                student.setLastName("LastName");
+                student.setEmail("Email");
+                student.setCellNumber("CellNumber");
+                student.setStudentID("StudentID");
+                student.setHighSchool("HighSchool");
+                student.setGender("Gender");
+
+                return student;
+            }
+            return null;
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }
     }
 
-    @Override
     public Student getByUsername(String username) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         // search for a student using the StudentID as the unique filter
@@ -90,8 +154,59 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
-    public void updateStudent(String id, Student updated_account) {
+    public void delete(String id) {
+        String sql = "delete from student where id = ?";
+
+        try (
+                // get a connection to the database
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);
+        ) {
+
+             stmt.setString(1, id);
+            // execute the query
+            int rs = stmt.executeUpdate();
+
+
+        } catch (SQLException ex) {
+            throw new Exceptions(ex.getMessage(), ex);
+        }    
+    }
+
+    @Override
+    public boolean exists(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void updateItem(String id, Student updated_account) {
+        delete(id);
+           String sql = "INSERT INTO Student (Username, Password, FirstName, LastName, Email, CellNumber, StudentID, HighSchool, Gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (
+                Connection dbCon = DBConnection.getConnection(databaseURI);
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, updated_account.getUserName());
+            stmt.setString(2, updated_account.getPassword());
+            stmt.setString(3, updated_account.getFirstName());
+            stmt.setString(4, updated_account.getLastName());
+            stmt.setString(5, updated_account.getEmail());
+            stmt.setString(6, updated_account.getCellNumber());
+            stmt.setString(7, updated_account.getStudentID());
+            stmt.setString(8, updated_account.getHighSchool());
+            stmt.setString(9, updated_account.getGender());
+            
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
@@ -100,7 +215,17 @@ public class DBStudentJDBC implements StudentDAOInterface {
     }
 
     @Override
+    public List<Student> getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public Student getByStudentID(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateStudent(String id, Student updated_account) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
