@@ -5,10 +5,13 @@
  */
 package server;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author Domini
  */
+@Service
 public class DepartmentService {
     
 }

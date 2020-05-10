@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  *
  * @author Dominic
  */
-//@Service
+@Service
 public class StudentService {
 private final StudentDAOInterface student;
    
