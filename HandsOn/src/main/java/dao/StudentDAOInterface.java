@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package dao;
-
+ 
 import domain.Student;
 import java.util.Collection;
 import java.util.List;
-
+ 
 /**
  *
  * @author vincenttoailoa
  */
 public interface StudentDAOInterface {
-
+ 
     /**
      * Adds a account to the accounts.
      *
@@ -23,22 +23,22 @@ public interface StudentDAOInterface {
      //void create(Student account);
     
     int saveStudent(Student student);
-
-    void delete(String id);
-
+ 
+    int delete(String id);
+ 
     boolean exists(String id);
-
+ 
     List<Student> getAll();
-
+ 
     Student getByEmail(String email);
-
-    Student getByStudentID(String id);
-
-    void updateStudent(String id, Student updated_account);
-    
-    void removeStudent(Student student);
-
+ 
+    Student getById(String id);
+ 
+    Student getByUername(String username);
+ 
+    int updateItem(String id, Student updated_account);
+ 
     Boolean validateCredentials(String username, String password);
-    
+
     
 }

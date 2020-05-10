@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author Derek Zou
  */
-
 @Repository("student")
 public class StudentDAO implements StudentDAOInterface {
     
@@ -24,7 +23,7 @@ public class StudentDAO implements StudentDAOInterface {
     // customers stored by username
     private static List<Student> students = new ArrayList<>();
     
-
+ 
     @Override
     public int saveStudent(Student student){
         //accounts.add(student);
@@ -37,7 +36,7 @@ public class StudentDAO implements StudentDAOInterface {
     public List<Student> getAll() {
             return students;
     }
-
+ 
     /**
      * Adds a account to the accounts.
      *
@@ -47,7 +46,8 @@ public class StudentDAO implements StudentDAOInterface {
     //public void create(Student account) {
     //        accounts.put(account.getEmail(), account);
     // }
-
+ 
+    @Override
     public Student getById(String id) {
         for(int i = 0; i<students.size(); i++){
             if (students.get(i).getStudentID() == id){
@@ -57,7 +57,7 @@ public class StudentDAO implements StudentDAOInterface {
         return null;
     // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+ 
     @Override
     public Student getByEmail(String email){
         for(int i = 0; i<students.size(); i++){
@@ -67,8 +67,9 @@ public class StudentDAO implements StudentDAOInterface {
         }
         return null;
     }
-
-    public Student getByUsername(String username) {
+ 
+    @Override
+    public Student getByUername(String username) {
      for(int i = 0; i<students.size(); i++){
             if (students.get(i).getUserName().equals(username)){
                 return students.get(i);
@@ -76,16 +77,17 @@ public class StudentDAO implements StudentDAOInterface {
         }
         return null;
     }
-
+ 
     @Override
-    public void delete(String id) {
+    public int delete(String id) {
         for(int i = 0; i<students.size(); i++){
             if (students.get(i).getStudentID().equals(id)){
                 students.remove(i);
             }
         }
+        return 1;
     }
-
+ 
     @Override
     public boolean exists(String id) {
         for(int i = 0; i<students.size(); i++){
@@ -95,15 +97,17 @@ public class StudentDAO implements StudentDAOInterface {
         }
         return false;
     }
-
-    public void updateItem(String id, Student updated_account) {
+ 
+    @Override
+    public int updateItem(String id, Student updated_account) {
         for(int i = 0; i<students.size(); i++){
             if (students.get(i).getStudentID().equals(id)){
                 students.set(i, updated_account);
             }
         }
+        return 1;
     }
-
+ 
     @Override
     public Boolean validateCredentials(String username, String password) {
         for(int i = 0; i<students.size(); i++){
@@ -115,22 +119,8 @@ public class StudentDAO implements StudentDAOInterface {
         }
         return false;
     }
-
-    @Override
-    public Student getByStudentID(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateStudent(String id, Student updated_account) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void removeStudent(Student student) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
+
 
 
 
