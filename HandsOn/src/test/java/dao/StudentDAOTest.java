@@ -31,8 +31,8 @@ public class StudentDAOTest {
     @Before
     public void setUp() {
         this.studentOne = new Student("James", "pass1", "Jamie", "Roberts", "vinny@gmail.com", "023040432", "4K", "Hillmorton", "Male");
-        this.studentOne = new Student("John", "pass2", "John", "Wick", "wick@gmail.com", "023044444", "43K", "Shirley", "Male");
-        this.studentOne = new Student("Jemma", "pass3", "Jem", "Lofi", "jemjem@gmail.com", "023331232", "2770One", "Villa Maria", "Female");
+        this.studentTwo = new Student("John", "pass2", "John", "Wick", "wick@gmail.com", "023044444", "43K", "Shirley", "Male");
+        this.studentThree = new Student("Jemma", "pass3", "Jem", "Lofi", "jemjem@gmail.com", "023331232", "2770One", "Villa Maria", "Female");
     
         // save the students
         dao.saveStudent(studentOne);
@@ -42,14 +42,14 @@ public class StudentDAOTest {
     
     @After
     public void tearDown() {
-        //dao.removeStudent(studentOne);
-        //dao.removeStudent(studentTwo);
-        //dao.removeStudent(studentThree);
+        dao.delete(studentOne.getStudentID());
+        dao.delete(studentTwo.getStudentID());
+        dao.delete(studentThree.getStudentID());
         
     }
 
     @Test
-    public void testSaveStudent() {
+    public void testsaveStudent() {
         
         // save the student using the DAO
         dao.saveStudent(studentOne);
@@ -59,10 +59,6 @@ public class StudentDAOTest {
         
     }
     
-    @Test
-    public void testGetStudents() {
-     
-    }
 
     @Test
     public void testGetByStudentID() {
