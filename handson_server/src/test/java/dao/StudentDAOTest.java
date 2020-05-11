@@ -6,8 +6,11 @@
 package dao;
 
 
+import domain.Application;
 import domain.Student;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,9 +45,14 @@ public class StudentDAOTest {
     
     @Before
     public void setUp() {
-        this.studentOne = new Student("James", "pass1", "Jamie", "Roberts", "vinny@gmail.com", "023040432", "4K", "Hillmorton", "Male");
-        this.studentTwo = new Student("John", "pass2", "John", "Wick", "wick@gmail.com", "023044444", "43K", "Shirley", "Male");
-        this.studentThree = new Student("Jemma", "pass3", "Jem", "Lofi", "jemjem@gmail.com", "023331232", "2770One", "Villa Maria", "Female");
+        Application a = new Application();
+        
+        List<Application> applications =new ArrayList() ;
+        applications.add(a);
+        
+        this.studentOne = new Student("James", "pass1", "Jamie", "Roberts", "vinny@gmail.com", "023040432", "4K", "Hillmorton", "Male",applications);
+        this.studentTwo = new Student("John", "pass2", "John", "Wick", "wick@gmail.com", "023044444", "43K", "Shirley", "Male",applications);
+        this.studentThree = new Student("Jemma", "pass3", "Jem", "Lofi", "jemjem@gmail.com", "023331232", "2770One", "Villa Maria", "Female",applications);
     
         // save the students
         dao.saveStudent(studentOne,studentOne.getEmail());

@@ -5,7 +5,7 @@
  */
 package domain;
  
-import com.fasterxml.jackson.annotation.JsonProperty;
+//import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 //import org.springframework.stereotype.Repository;
  
@@ -47,21 +47,21 @@ public class Student implements Comparable<Student>  {
     
     
     
-    public Student(@JsonProperty("username")String userName, @JsonProperty("password")String password, 
-            @JsonProperty("firstname")String firstName, @JsonProperty("lastname")String lastName, 
-            @JsonProperty("email")String email, @JsonProperty("cell")String cellNumber, 
-            @JsonProperty("id")String studentID, @JsonProperty("highschool")String highSchool, 
-            @JsonProperty("gender")String gender) {
-        this.userName = userName;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.cellNumber = cellNumber;
-        this.id = studentID;
-        this.highSchool = highSchool;
-        this.gender = gender;       
-    }
+//    public Student(@JsonProperty("username")String userName, @JsonProperty("password")String password, 
+//            @JsonProperty("firstname")String firstName, @JsonProperty("lastname")String lastName, 
+//            @JsonProperty("email")String email, @JsonProperty("cell")String cellNumber, 
+//            @JsonProperty("id")String studentID, @JsonProperty("highschool")String highSchool, 
+//            @JsonProperty("gender")String gender) {
+//        this.userName = userName;
+//        this.password = password;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.cellNumber = cellNumber;
+//        this.id = studentID;
+//        this.highSchool = highSchool;
+//        this.gender = gender;       
+//    }
      @Override
     public int compareTo(Student o) {
         return this.email.compareTo(o.getEmail());

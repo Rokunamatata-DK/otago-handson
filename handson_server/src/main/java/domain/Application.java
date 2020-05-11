@@ -26,6 +26,14 @@ public class Application {
         this.description = description;
         this.date = date;
     }
+
+    //testing 
+    public Application() {
+         this.studentid = "test1";
+       
+        
+    }
+    
     
 
 
