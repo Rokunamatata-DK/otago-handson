@@ -11,4 +11,9 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:4.12'
+    def joobyVer =  '1.6.6'
+	compile group: 'org.jooby', name: 'jooby-netty', version: joobyVer
+	compile group: 'org.jooby', name: 'jooby-gson', version: joobyVer
+	compile group: 'org.jooby', name: 'jooby-apitool', version: joobyVer
+    
 }
