@@ -8,13 +8,13 @@ package dao;
 import domain.Application;
 import domain.Department;
 import java.util.List;
-import org.springframework.stereotype.Repository;
+
 
 /**
  *
  * @author Dominic
  */
-@Repository
+
 public class DBDepartmentJDBC implements DepartmentDAO{
     private String databaseURI = "database URI insert here";
 

@@ -9,20 +9,18 @@ import dao.StaffDAO;
 import dao.StudentDAOInterface;
 import domain.Staff;
 import domain.Student;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+
 
 /**
  *
  * @author Dominic
  */
-@Service
+
 public class StaffService {
 private final StaffDAO staff;
    
-    @Autowired
-   public StaffService(@Qualifier("injectStaff") StaffDAO staff) {
+
+   public StaffService(StaffDAO staff) {
        this.staff = staff;
    }    
    public Staff getStaffByID(String id){

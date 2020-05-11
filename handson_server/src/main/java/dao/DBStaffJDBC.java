@@ -12,13 +12,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import org.springframework.stereotype.Repository;
+
 
 /**
  *
  * @author Dominic
  */
-@Repository("injectStaff")
+
 public class DBStaffJDBC implements StaffDAO{
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project";
 

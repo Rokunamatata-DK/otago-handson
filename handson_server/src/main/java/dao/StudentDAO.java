@@ -7,12 +7,12 @@ package dao;
 import domain.*;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Derek Zou
  */
-@Repository("student")
+
 public class StudentDAO implements StudentDAOInterface {
     
     //private static final Map<String, Student> accounts = new TreeMap<>();

@@ -11,12 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import domain.Student;
 import java.util.List;
-import org.springframework.stereotype.Repository;
+
  
  
  
  
-@Repository("jdbcStudent")
+
 public class DBStudentJDBC implements StudentDAOInterface {
     // confirm database URI
     private String databaseURI = "jdbc:h2:tcp://localhost:9092/310project"; 

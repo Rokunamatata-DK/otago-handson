@@ -13,7 +13,7 @@ import org.h2.jdbcx.JdbcConnectionPool;
  *
  * @author vincenttoailoa
  */
-@Repository
+
 public class DBConnection implements ConnectionDAO{
     
    private static final String USERNAME = "sa";

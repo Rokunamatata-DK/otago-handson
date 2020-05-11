@@ -16,9 +16,7 @@ dependencies {
 	compile group: 'org.jooby', name: 'jooby-gson', version: joobyVer
 	compile group: 'org.jooby', name: 'jooby-apitool', version: joobyVer
       implementation group:'com.h2database', name:'h2', version:'1.4.+'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+    
 }
 test {
  dependencies {
