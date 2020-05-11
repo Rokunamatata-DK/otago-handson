@@ -6,7 +6,11 @@
 package dao;
 import domain.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -15,26 +19,20 @@ import java.util.List;
 
 public class StudentDAO implements StudentDAOInterface {
     
-    //private static final Map<String, Student> accounts = new TreeMap<>();
-    //private Collection<Student> accounts = new HashSet<Student>();
-    //private Map<String, Student> usernameMap = new HashMap<>();
-    //private static  final Map<String, Student> usernameMap = new TreeMap<>();
+   private static final Map< String,Student> students = new TreeMap<>();
+//    private Collection<Student> accounts = new HashSet<Student>();
+//    private Map<String, Student> usernameMap = new HashMap<>();
+//    private static  final Map<String, Student> usernameMap = new TreeMap<>();
     
     // customers stored by username
-    private static List<Student> students = new ArrayList<>();
+    //private static List<Student> students = new ArrayList<>();
     
 
-    @Override
-    public int saveStudent(Student student){
-        //accounts.add(student);
-        //usernameMap.put(student.getStudentID(), student);
-        System.out.println("Saving student: " + student);
-        students.add(student);
-        return 1;
-    }
+   
     
-    public List<Student> getAll() {
-            return students;
+   @Override
+    public Collection<Student> getAll() {
+            return students.values();
     }
 
     @Override
@@ -90,12 +88,12 @@ public class StudentDAO implements StudentDAOInterface {
 
     @Override
     public int updateItem(String id, Student updated_account) {
-        for(int i = 0; i<students.size(); i++){
-            if (students.get(i).getStudentID().equals(id)){
-                students.set(i, updated_account);
-            }
-        }
-        return 1;
+//        for(int i = 0; i<students.size(); i++){
+//            if (students.get(i).getStudentID().equals(id)){
+//                students.put(i, updated_account);
+//            }
+//        }
+       return 1;
     }
 
     @Override
@@ -108,6 +106,14 @@ public class StudentDAO implements StudentDAOInterface {
             }
         }
         return false;
+    }
+
+    @Override
+    public int saveStudent(Student student, String email) {
+        //TODO validate
+        
+        students.put( email,student );
+       return 1;
     }
 }
 

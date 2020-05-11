@@ -26,9 +26,26 @@ public class Student implements Comparable<Student>  {
     private String gender;
     private List<Application> applications;
 
-    public Student() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    public Student() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    public Student(String userName, String password, String firstName, String lastName, String email, String cellNumber, String id, String highSchool, String gender, List<Application> applications) {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.cellNumber = cellNumber;
+        this.id = id;
+        this.highSchool = highSchool;
+        this.gender = gender;
+        this.applications = applications;
     }
+    
+    
+    
+    
     
     public Student(@JsonProperty("username")String userName, @JsonProperty("password")String password, 
             @JsonProperty("firstname")String firstName, @JsonProperty("lastname")String lastName, 

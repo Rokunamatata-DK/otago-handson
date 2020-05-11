@@ -15,30 +15,25 @@ import java.util.List;
  */
 public interface StudentDAOInterface {
  
-    /**
-     * Adds a account to the accounts.
-     *
-     * @param  The accounts being added.
-     */
-     //void create(Student account);
+ 
     
-    int saveStudent(Student student);
+    public  int saveStudent(Student student, String email);
 
-    int delete(String id);
+    public  int delete(String email);
 
-    boolean exists(String id);
+   public  boolean exists(String email);
 
-    List<Student> getAll();
+   public   Collection<Student> getAll();
 
-    Student getByEmail(String email);
+   public  Student getByEmail(String email);
  
-    Student getById(String id);
+    public  Student getById(String id);
  
-    Student getByUsername(String username);
+   public  Student getByUsername(String username);
 
-    int updateItem(String id, Student updated_account);
+   public  int updateItem(String id, Student updated_account);
 
-    Boolean validateCredentials(String username, String password);
+  public   Boolean validateCredentials(String username, String password);
 
     
 }
