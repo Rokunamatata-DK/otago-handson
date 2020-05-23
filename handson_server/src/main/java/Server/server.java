@@ -16,7 +16,7 @@ import domain.*;
  * @author Derek Zou
  */
 public class server extends Jooby{
-static StudentDAOInterface student_dao= new StudentDAO();
+static StudentDAOInterface student_dao= new DBStudentJDBC();
 
 
 //    static DAO Product_dao = new Product_manage_dao();
