@@ -1,0 +1,197 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/04/2020, 3:31:11 PM
+    Author     : Josekochan
+*/
+
+body {
+    font-family: "Arial", "Helvetica", "Sans-serif";
+}
+
+img#otago_logo {
+    height: 100%;
+    z-index: 2;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+div#sidebar {
+    background-color: #133569;
+    width: 159px;
+    padding: 13px 18px 15px;
+    z-index: 1;
+    position: relative;
+    float: left;
+    font-size: 1em;
+}
+
+div#sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+div#page {
+    font-family: "Arial", "Helvetica", "sans-serif";
+    margin-left: 200px;
+    background-color: white;
+    width: 80%;
+}
+
+div#header {
+    background-color: darkgrey;
+    width: 95%;
+}
+
+#breadcrumbs {
+    padding: 10px;
+    list-style: none;
+}
+
+#breadcrumbs li {
+    display: inline;
+    padding-left: 15px;
+}
+
+#breadcrumbs li a{
+    color: black;
+    text-decoration: none;
+}
+
+#breadcrumbs li a:hover {
+    color: #133569;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#breadcrumbs li+li:before {
+    padding-right: 15px;
+    content: "/\00a0";
+}
+
+.img {
+    width: 100%;
+    cursor: pointer;
+}
+
+#breadcrumbs {
+    
+}
+
+#content {
+    position: relative;
+    overflow: auto;
+    margin: auto;
+    height: 90%;
+    width: 50%;
+    max-width: 550px;
+    padding: 30px;
+    border: 10px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    overflow: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 90%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#modal_content {
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 500px;
+}
+
+.departments {
+    float: left;
+    border: 5px solid powderblue;
+    border-radius: 5px;
+    margin: 10px;
+    width: 300px;
+}
+
+#modal_image {
+    height: 300px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+form {
+    left: calc(width/2);
+    position: relative;
+    margin: auto;
+    margin-left: 25%;
+    padding: 5px;
+    background-color: lightgrey;
+    border-radius: 3px;
+    width: 90%;
+    max-width: 500px;
+    height: 70%
+}
+
+form input[type=text], input[type=password], input[type=email], select { 
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 5%;
+    margin-bottom: 5px;
+    width: 90%;
+    border: 2px solid lightgrey;
+    border-radius: 3px
+}
+
+form input:focus, select:focus{
+    border: 2px solid darkgrey;
+    -webkit-transition: 0.5s;
+    transition: 0.4s;
+}
+
+form input[type=submit] {
+    padding: 10px;
+    font-size: 20px;
+    margin: auto;
+    cursor: pointer;
+    width: 20%;
+    border: none;
+}
+
+form input[type=submit]:hover {
+    color: white;
+    background-color: #133569;
+    transition: 0.4s;
+}
+
+fieldset{
+    padding-top: 10px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: lightgrey;
+}
+
+fieldset:hover {
+    border-color: darkgrey;
+    transition: 0.4s;
+}
