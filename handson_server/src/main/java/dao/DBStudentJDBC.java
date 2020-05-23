@@ -48,7 +48,6 @@ public class DBStudentJDBC implements StudentDAOInterface {
             stmt.setString(8, student.getHighSchool());
             stmt.setString(9, student.getGender());
             
- 
             stmt.executeUpdate();
 
         } catch (SQLException ex) {
