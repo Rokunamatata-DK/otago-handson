@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="handson.css">
     </head>
     <body>
-        
+
         <div id="sidebar">  <!-- Side navigation of website -->
             <a href="index.html">
                 <img id="otago_logo" src="assets/logo.png" alt="University of Otago">
@@ -24,8 +24,10 @@ and open the template in the editor.
             <br>
             <a href="projects.html">Departments</a>
             <br>
+            <a href="index.html">Log out</a>
+            <br>
         </div>
-        
+
         <div id="header"> <!-- Breadcrumbs for further navigation -->
             <ul id="breadcrumbs">
                 <li><a href="index.html">Home</a></li>
@@ -33,20 +35,202 @@ and open the template in the editor.
                 <li>Apply</li>
             </ul>
         </div>
-        
+
         <div id="page">
-            <form> <!-- Form for applying to Hands On -->
-                <fieldset>
-                    <legend>Uploads:</legend>
-                    <label for="cv">CV:</label>
-                    <input type="file" id="cv">
-                    <br>    
-                </fieldset>
-                <fieldset>
-                    <legend>Rank Projects:</legend>
-                    <p>Elements go here.</p>
-               </fieldset>
-            </form>
+
+            <div id="form_appl">
+                <form> <!-- Form for applying to Hands On -->
+                    <fieldset>
+                        <legend>Application Letter</legend>
+                        <label for="letter">Letter:</label>
+                        <textarea id="letter"></textarea>
+                        <br>    
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Rank Projects:</legend>
+                        <p>Choose which projects you'd like to do.</p>
+
+                        <div class="column">
+                            <select name="drop1" size="30" id="projects">
+                                <option value="1">Anatomy</option>
+                                <option value="2">Archaeology</option>
+                                <option value="3">Biochemistry</option>
+                                <option value="4">Chemistry</option>
+                                <option value="5">Contemporary Guitar</option>
+                                <option value="6">Economics</option>
+                                <option value="7">Education</option>
+                                <option value="8">English</option>
+                                <option value="9">Genetics</option>
+                                <option value="10">Geography</option>
+                                <option value="11">Geology</option>
+                                <option value="12">Immunology</option>
+                                <option value="13">Information Science</option>
+                                <option value="14">International Business</option>
+                                <option value="15">Languages & Cultures</option>
+                                <option value="16">Law</option>
+                                <option value="17">Marketing</option>
+                                <option value="18">Media & Communications</option>
+                                <option value="19">Microbiology</option>
+                                <option value="20">Pharmacology & Toxicology</option>
+                                <option value="21">Pharmacy</option>
+                                <option value="22">Philosophy</option>
+                                <option value="23">Physics</option>
+                                <option value="24">Physiology</option>
+                                <option value="25">Politics</option>
+                                <option value="26">Psychology</option>
+                                <option value="27">Sociology, Gender Studies, Criminology, & Social Work</option>
+                                <option value="28">Sport & Exercise Science</option>
+                                <option value="29">Theatre & Dance</option>
+                                <option value="30">Zoology</option>
+                            </select>
+
+                            <input type="button" value="Add" id="add" sytle="clear: both;">
+                        </div>
+
+                        <div class="column_right">
+                            <table id="project_table">
+                                <thead>
+                                    <tr>
+                                        <th>Project</th>
+                                        <th style="width: 40px;">Rank</th>
+                                        <th style="width: 30px;">Select</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                <td colspan="3">No projects added</td>
+                                </tbody>
+
+                            </table>
+
+                            <input type="button" value="Delete" id="remove" style="clear: both;">
+
+                        </div>
+
+                    </fieldset>
+
+                    <input type="button" id="submit" value="Submit" align="right">    
+                    <input type="button" value="Reset">
+
+                </form>
+            </div>
         </div>
+
+        <div id="modal">
+            <div id="content">
+                <h2>You've submitted your application!</h2>
+            </div>
+        </div>
+
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+    <script type="text/javascript">
+    </script>
+    <script>
+        var added = 0;
+        var remove = document.getElementById("remove");
+        var add = document.getElementById("add");
+        var form = document.getElementsByTagName("form")[0];
+        var submit = document.getElementById("submit");
+
+        $('tbody').sortable({
+            update: function() {
+        var selected = document.getElementById("project_table");        
+        var i, checkRow;
+                                
+                for (i = 1; i <= added; i++) {
+                    
+                    checkRow = selected.rows.item(i).cells;
+                    checkRow.item(1).innerHTML = i;
+                }
+            }
+        });
+        
+        add.onclick = function () {
+
+            var projects = document.getElementById("projects");
+            var selected = document.getElementById("project_table");
+            var tBody = selected.getElementsByTagName("tbody")[0];
+            var project = projects.options[projects.selectedIndex].innerHTML;
+            var checkRow;
+            var i;
+
+            if (added == 0) {
+
+                tBody.deleteRow(0);
+
+            } else {
+
+                for (i = 0; i <= added; i++) {
+
+                    checkRow = selected.rows.item(i).cells;
+
+                    if (checkRow.item(0).innerHTML === project) {
+                        return;
+                    }
+                }
+            }
+
+            var addRow = tBody.insertRow();
+
+            var cell1 = addRow.insertCell(0);
+            var cell2 = addRow.insertCell(1);
+            var cell3 = addRow.insertCell(2);
+
+            cell1.innerHTML = project;
+            cell2.innerHTML = ++added;
+            cell3.innerHTML = "<input type='checkbox' value='del' class='checks'>";
+        };
+
+        remove.onclick = function () {
+
+            var selected = document.getElementById("project_table");
+            var tBody = selected.getElementsByTagName("tbody")[0];
+            var checkRow;
+            var i;
+
+            for (i = added - 1; i >= 0; i--) {
+
+                console.log("checking " + i);
+                checkRow = document.getElementsByClassName("checks")[i];
+
+                if (checkRow.checked) {
+
+                    tBody.deleteRow(i);
+
+                    console.log(tBody.length);
+
+                    --added;
+
+                    for (j = i; j < added; j++) {
+                        checkRow = tBody.rows.item(j).cells;
+                        checkRow.item(1).innerHTML = checkRow.item(1).innerHTML - 1;
+                    }
+                }
+            }
+            if (added == 0) {
+
+                var addRow = tBody.insertRow();
+
+                var cell = addRow.insertCell(0);
+                cell.colSpan = 3;
+                cell.innerHTML = "No projects added";
+
+            }
+        }
+
+        submit.onclick = function () {
+
+            if (added == 0) {
+                alert("You haven't selected any projects. Make sure you add and rank the projects for which you want to apply.");
+            } else {
+                document.getElementsByTagName("form")[0].submit;
+            }
+        }
+
+    </script>
+
 </html>

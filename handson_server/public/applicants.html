@@ -12,8 +12,63 @@ and open the template in the editor.
         <link rel='stylesheet' href='handson.css'>
     </head>
     <body>
+
+        <div id="sidebar">  <!-- Side navigation of website -->
+            <a href="index.html">
+                <img id="otago_logo" src="assets/logo.png" alt="University of Otago">
+            </a>
+            <br>
+            <a href="profile.html">Profile</a>
+            <br>
+            <a href="projects.html">Departments</a>
+            <br>
+            <a href="info.html">Information for Students</a>
+            <br>
+            <a href="index.html">Log out</a>
+            <br>
+        </div>
+
+        <div id="header"> <!-- Breadcrumbs for further navigation -->
+            <ul id="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="applicants.html">Profile</a></li>
+                <li>Apply</li>
+            </ul>
+        </div>
+
         <div id='page'>
-            <p>Here's where the applicants will be displayed, once, I get around to it.</p>
+
+            <table>
+                <tr>
+                    <th onclick="sortTable(0)">Surname</th>
+                    <th onclick="sortTable(1)">First Name</th>
+                    <th onclick="sortTable(2)">Application Letter</th>
+                    <th onclick="sortTable(3)">Ranked</th>
+                    <th>Accept</th>
+                </tr>
+                <tr>
+                    <td>Sample</td>
+                    <td>Student</td>
+                    <td>I think I'd be a great candidate, because I too have a computer.</td>
+                    <td>1</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Another</td>
+                    <td>Student</td>
+                    <td>yo give me your servers</td>
+                    <td>30</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Padding</td>
+                    <td>List</td>
+                    <td>I'm just here to take up space.</td>
+                    <td>15</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            <button style="float: right;">Accept Candidates</button>
         </div>
     </body>
 </html>

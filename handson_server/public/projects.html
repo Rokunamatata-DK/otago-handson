@@ -9,9 +9,12 @@ and open the template in the editor.
         <title>Departments</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="handson.css">
+        <link rel="stylesheet" href="handson.css" type="text/css"/>
+        <script src="js/handson.js"></script>
+
     </head>
     <body>
+
         <div id="sidebar">  <!-- Side navigation of website -->
             <a href="index.html">
                 <img id="otago_logo" src="assets/logo.png" alt="University of Otago">
@@ -21,54 +24,188 @@ and open the template in the editor.
             <br>
             <a href="login.html">Log In</a>
             <br>
+            <a href="info.html">Information for Students</a>
+            <br>
             <a href="projects.html">Departments</a>
             <br>
         </div>
-        
+
         <div id="header"> <!-- Breadcrumbs for further navigation -->
             <ul id="breadcrumbs">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Departments</a></li>
+                <li>Departments</li>
             </ul>
         </div>
-        
+
         <div id="page">
-            <div class="departments" id="department01">
-                <img class="img" id="img01" src="assets/fetus.png" alt="Computer Science">
+            <div>
+                <h1>Departments</h1>
+                <p>Hands On offers many projects across the different divisions
+                    of the University of Otago. There are three main divisions that
+                    each cover many subjects. Take a look at what we have to offer
+                    so you know what you want to do.</p>
             </div>
-            <div class="departments" id="department02">
-                <img class="img" id="img02" src="assets/anoth.png" alt="anoth">
+
+            <div class='division'>
+                <h2>Division of Business</h2>
+                <div class="departments" id="department1" title="Economics">
+                    <img class="img" id="img02" src="assets/econ.jpg" alt="Economics">
+                    <p>Economics</p>
+                </div>
+                <div class="departments" id="department2" title="Information Science">
+                    <img class="img" id="img01" src="assets/info.jpg" alt="Information Science">
+                    <p>Information Science</p>
+                </div>
+                <div class="departments" id="department3" title="International Business">
+                    <img class="img" id="img02" src="assets/intb.jpg" alt="International Business">
+                    <p>International Business</p>
+                </div>
+                <div class="departments" id="department4" title="Marketing">
+                    <img class="img" id="img02" src="assets/mark.jpg" alt="Marketing">
+                    <p>Marketing</p>
+                </div>
             </div>
+
+            <div class='division'>
+                <h2>Division of Humanities</h2>
+                <div class="departments" id="department5" title="Archaeology">
+                    <img class="img" id="img02" src="assets/arch.jpg" alt="Archaeology">
+                    <p>Archaeology</p>
+                </div>
+                <div class="departments" id="department6" title="Contemporary Guitar">
+                    <img class="img" id="img02" src="assets/guit.jpg" alt="Contemporary Guitar">
+                    <p>Contemporary Guitar</p>
+                </div>
+                <div class="departments" id="department7" title="Education">
+                    <img class="img" id="img02" src="assets/educ.jpg" alt="Education">
+                    <p>Education</p>
+                </div>
+                <div class="departments" id="department8" title="English">
+                    <img class="img" id="img02" src="assets/engl.jpg" alt="English">
+                    <p>English</p>
+                </div>
+                <div class="departments" id="department9" title="Law">
+                    <img class="img" id="img02" src="assets/laws.jpg" alt="Law">
+                    <p>Law</p>
+                </div>
+                <div class="departments" id="department10" title="Languages & Culture">
+                    <img class="img" id="img02" src="assets/lang.jpg" alt="Languages & Culture">
+                    <p>Law</p>
+                </div>
+                <div class="departments" id="department11" title="Media & Communication">
+                    <img class="img" id="img02" src="assets/meco.jpg" alt="Media & Communication">
+                    <p>Media & Communication</p>
+                </div>
+                <div class="departments" id="department12" title="Philosophy">
+                    <img class="img" id="img02" src="assets/phil.jpg" alt="Philosophy">
+                    <p>Philosophy</p>
+                </div>
+                <div class="departments" id="department13" title="Politics">
+                    <img class="img" id="img02" src="assets/pols.jpg" alt="Politics">
+                    <p>Politics</p>
+                </div>
+                <div class="departments" id="department14" title="Sociology, Gender Studies, Criminology & Social Work">
+                    <img class="img" id="img02" src="assets/soci.jpg" alt="Sociology, Gender Studies, Criminology & Social Work">
+                    <p>Sociology, Gender Studies, Criminology & Social Work</p>
+                </div>
+                <div class="departments" id="department15" title="Theatre & Dance">
+                    <img class="img" id="img02" src="assets/thea.jpg" alt="Theatre & Dance">
+                    <p>Theatre and Dance</p>
+                </div>
+            </div>
+
+            <div class='division'>
+                <h2>Division of Sciences</h2>
+                <div class="departments" id="department16" title="Anatomy & Physiology">
+                    <img class="img" id="img02" src="assets/anat.jpg" alt="Anatomy">
+                    <p>Anatomy</p>
+                </div>
+                <div class="departments" id="department17" title="Biochemistry">
+                    <img class="img" id="img02" src="assets/bioc.jpg" alt="Biochemistry">
+                    <p>Biochemistry</p>
+                </div>
+                <div class="departments" id="department18" title="Chemistry">
+                    <img class="img" id="img02" src="assets/chem.jpg" alt="Chemistry">
+                    <p>Chemistry</p>
+                </div>
+                <div class="departments" id="department19" title="Genetics">
+                    <img class="img" id="img02" src="assets/gene.jpg" alt="Genetics">
+                    <p>Genetics</p>
+                </div>
+                <div class="departments" id="department20" title="Geography">
+                    <img class="img" id="img02" src="assets/geog.jpg" alt="Geography">
+                    <p>Geography</p>
+                </div>
+                <div class="departments" id="department21" title="Geology">
+                    <img class="img" id="img02" src="assets/geol.jpg" alt="Geology">
+                    <p>Geology</p>
+                </div>
+                <div class="departments" id="department22" title="Immunology">
+                    <img class="img" id="img02" src="assets/immu.jpg" alt="Immunology">
+                    <p>Immunology</p>
+                </div>
+                <div class="departments" id="department23" title="Microbiology">
+                    <img class="img" id="img02" src="assets/mico.jpg" alt="Microbiology">
+                    <p>Microbiology</p>
+                </div>
+                <div class="departments" id="department24" title="Pharmacology & Toxicology">
+                    <img class="img" id="img02" src="assets/phto.jpg" alt="Pharmacology & Toxicology">
+                    <p>Pharmacology</p>
+                </div>
+                <div class="departments" id="department25" title="Pharmacy">
+                    <img class="img" id="img02" src="assets/phar.jpg" alt="Pharmacy">
+                    <p>Pharmacy</p>
+                </div>
+                <div class="departments" id="department26" title="Physics">
+                    <img class="img" id="img02" src="assets/pscs.jpg" alt="Physics">
+                    <p>Physics</p>
+                </div>
+                <div class="departments" id="department27" title="Physiology">
+                    <img class="img" id="img02" src="assets/phys.jpg" alt="Physiology">
+                    <p>Physiology</p>
+                </div>
+                <div class="departments" id="department28" title="Psychology">
+                    <img class="img" id="img02" src="assets/psyc.jpg" alt="Psychology">
+                    <p>Psychology</p>
+                </div>
+                <div class="departments" id="department29" title="Sport & Exercise Science">
+                    <img class="img" id="img02" src="assets/spes.jpg" alt="Sport & Exercise Science">
+                    <p>Sport & Exercise Science</p>
+                </div>
+                <div class="departments" id="department30" title="Zoology">
+                    <img class="img" id="img02" src="assets/zool.jpg" alt="Zoology">
+                    <p>Zoology</p>
+                </div>
+            </div> 
         </div>
-        
         <div id="modal">
             <div id="content">
                 <span class="close">&times;</span>
-                <div id="caption"></div>
+                <h2 id="title">Information Science</h2>
                 <img class="modal_content" id="modal_image">
-                <p>Computer science is the best science that requires no lab coats, and uses very fancy computers.</p>
-                <p>Our graduates are considered to be in the top 2% of all undergraduates, which makes them better than pretty much anyone. Sorry, but I don't make the facts, I just tell them.</p>
+                <h3>Digital crime-fighting</h3>
+                <p>Computer crime is on the rise. With viruses, worms, botnets, scammers, packet sniffers and password-crackers, it's a dangerous world out there.</p>
+
+                <p>In this project, you'll look at some of the tools and techniques to safeguard against these threats, and use them to gather evidence in a computer crime scene investigation.</p>
             </div>
         </div>
-        
         <script>
-            
             var img = document.getElementById("img01");
             var modal = document.getElementById("modal");
             var modal_img = document.getElementById("modal_image");
             var caption = document.getElementById("caption");
 
-            img.onclick = function() {
+            img.onclick = function () {
                 modal.style.display = "block";
                 modal_img.src = this.src;
-                caption.textContent = this.alt; 
-            }
+                caption.textContent = this.alt;
+            };
 
             var span = document.getElementsByClassName("close")[0];
-    
-            span.onclick = function() {
+
+            span.onclick = function () {
                 modal.style.display = "none";
-            }
+            };
         </script>
     </body>
 </html>

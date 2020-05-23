@@ -12,8 +12,8 @@ and open the template in the editor.
         <link rel="stylesheet" href="handson.css">
     </head>
     <body>
-        
-        
+
+
         <div id="sidebar">  <!-- Side navigation of website -->
             <a href="index.html">
                 <img id="otago_logo" src="assets/logo.png" alt="University of Otago">
@@ -25,14 +25,93 @@ and open the template in the editor.
             <br>
             <a href="projects.html">Departments</a>
             <br>
+            <a href="info.html">Information for Students</a>
+            <br>
+            <a href="index.html">Log out</a>
+            <br>
         </div>
-        
+
         <div id="header"> <!-- Breadcrumbs for further navigation -->
             <ul id="breadcrumbs">
                 <li><a href="index.html">Home</a></li>
                 <li>Profile</li>
             </ul>
         </div>
-        
+
+        <div id="page">
+
+            <div id="details">
+                <h2>Personal Details</h2>
+                <label>First Name:</label>
+                <label id="detail">Student</label><br>
+                <label>Surname:</label>
+                <label id="detail">Sample</label><br>
+                <label>Email:</label>
+                <label id="detail">student.sample@mail.site</label><br>
+                <label>School: Pretend High School</label><br>
+                <button type='button' id="edit">Edit</button>
+            </div>
+
+            <div id="application">
+                <h2>Your Application</h2>
+                <label>Application Status:</label>
+                <label id="status">No pending application</label><br>
+                <a href="apply.html">
+                    <button type="button" id='applybutton'>Apply Now!</button>
+                </a>
+            </div>
+            <div id='timetable'>
+                <h2>Timetable</h2>
+                <label>Timetable display here</label>
+            </div>
+
+        </div>
+
+        <div id="modal">
+            <div id="content">
+                <form id="modal_form"> 
+                    <fieldset>
+                        <legend>Edit Details</legend>
+                        <label for="firstname">First Name:</label>
+                        <br>
+                        <input type="text" id="firstname" placeholder="First Name"/>
+                        <br>
+                        <label for="surname">Last Name:</label>
+                        <br>
+                        <input type="text" id="surname" placeholder="Last Name"/>
+                        <br>
+                        <label for="email">E-Mail Address:</label>
+                        <br>
+                        <input type="email" id="email" placeholder="E-mail"/>
+                        <br>
+                        <label for="school">School:</label>
+                        <br>
+                        <input type="text" id="school" placeholder="School"/>
+                        <br>
+                        <label for="year">Year of Study:</label>
+                        <br>
+                        <select id="year" name="Year of Study">
+                            <option value="6th Form">6th Form</option>
+                            <option value="7th Form">7th Form</option>
+                        </select>
+                        <br>
+                        <input onclick="window.location.href = 'profiile.html'" type="submit" id="submit" value="Save"> 
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <script>
+
+            var modal = document.getElementById("modal");
+            var edit = document.getElementById("edit");
+            var submit = document.getElementById("submit");
+
+            edit.onclick = function () {
+                modal.style.display = "block";
+            }
+
+        </script>
+
     </body>
 </html>

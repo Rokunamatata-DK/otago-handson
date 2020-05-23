@@ -15,8 +15,11 @@ import org.jooby.Results;
 public class AssetModule extends Jooby {
 
     public AssetModule() {
-          assets("/*.html");
-        assets("/*.css");
+        assets("/*.html");
+        assets("/assets/*.jpg");
+        assets("/assets/*.png");
+        assets("/font/*.ttf");
+        assets("/handson.css");
         assets("/js/*.js");
         assets("/assets/*.png");
         // make index.html the default page

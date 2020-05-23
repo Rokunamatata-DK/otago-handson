@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="handson.css">
+    </head>
+    <body>
+
+        <div id="sidebar">  <!-- Side navigation of website -->
+            <a href="index.html">
+                <img id="otago_logo" src="assets/logo.png" alt="University of Otago">
+            </a>
+            <br>
+            <a href="info.html">Information for Students</a>
+            <br>
+            <a href="projects.html">Departments</a>
+            <br>
+        </div>
+
+        <div id="header"> <!-- Breadcrumbs for further navigation -->
+            <ul id="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+
+        <div id="page">
+
+            <table>
+                <tr>
+                    <th onclick="sortTable(0)">Surname</th>
+                    <th onclick="sortTable(1)">First Name</th>
+                    <th>Operations</th>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>Sample</td>
+                    <td><button id="edit">Edit</button><button style="float: right;">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Another</td>
+                    <td>Student</td>
+                    <td><button>Edit</button><button style="float: right;" id="deleter">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Padding</td>
+                    <td>List</td>
+                    <td><button>Edit</button><button style="float: right;">Delete</button></td>
+                </tr>
+            </table>
+
+            <div id="modal">
+                <div id="content">
+                    <form id="modal_form"> 
+                        <fieldset>
+                            <legend>Edit Details</legend>
+                            <label for="firstname">First Name:</label>
+                            <br>
+                            <input type="text" id="firstname" placeholder="First Name"/>
+                            <br>
+                            <label for="surname">Last Name:</label>
+                            <br>
+                            <input type="text" id="surname" placeholder="Last Name"/>
+                            <br>
+                            <label for="email">E-Mail Address:</label>
+                            <br>
+                            <input type="email" id="email" placeholder="E-mail"/>
+                            <br>
+                            <label for="school">School:</label>
+                            <br>
+                            <input type="text" id="school" placeholder="School"/>
+                            <br>
+                            <label for="year">Year of Study:</label>
+                            <br>
+                            <select id="year" name="Year of Study">
+                                <option value="6th Form">6th Form</option>
+                                <option value="7th Form">7th Form</option>
+                            </select>
+                            <br>
+                            <input type="submit" id="submit" value="Save"> 
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal_delete">
+            <div id="content">
+                <h2>Are you sure?</h2>
+                <p>You're about to delete a student's entire profile, are you sure you want to do this?</p>
+                <button onclick="window.location.href = 'admiin.html'">Delete this profile</button>
+                <button>Cancel</button>
+            </div>
+        </div>
+
+        <script>
+
+            var modal = document.getElementById("modal");
+            var edit = document.getElementById("edit");
+            var submit = document.getElementById("submit");
+            var deleter = document.getElementById("deleter");
+            var modal_delete = document.getElementById("modal_delete");
+
+            edit.onclick = function () {
+                modal.style.display = "block";
+            };
+
+            deleter.onclick = function () {
+                modal_delete.style.display = "block";
+            };
+
+
+
+            submit.onclick = function () {
+                modal.style.display = "none";
+            };
+        </script>
+    </body>
+</html>

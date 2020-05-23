@@ -35,13 +35,13 @@ module.factory('signInDAO', function ($resource) {
 module.controller('StudentController', function (registerDAO, signInDAO, $sessionStorage, $window) {
 
     this.signInMessage = "Please sign in to continue.";
-this.signUpMessage="signUp";
+    this.signUpMessage = "signUp";
     this.registerStudent = function (student) {
-        
+
         registerDAO.save(null, student,
                 // success callback
                         function () {
-                          
+
                             $window.location = "signIn.html";
                         },
                         // error callback
@@ -83,4 +83,4 @@ this.signUpMessage="signUp";
                         }
                     };
                 });
-
+ 
