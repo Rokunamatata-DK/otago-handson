@@ -38,6 +38,9 @@ and open the template in the editor.
         <div id="page">
             <div id="sign_up_form">
                 <form ng-controller="StudentController as stuCtrl" ng-submit="stuCtrl.registerStudent(student)">
+                    
+                     <h3 >{{stuCtrl.signUpMessage}}</h3>
+                    
                     <fieldset>
                         <legend>Sign Up Form:</legend>
                         <label for="firstname">First Name:</label>

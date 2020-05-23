@@ -26,11 +26,13 @@ dependencies {
     def joobyVer = '1.6.+'
     implementation group: 'org.jooby', name: 'jooby-netty', version: joobyVer
     implementation group: 'org.jooby', name: 'jooby-gson', version: joobyVer
+    
+   
 }
 
 run {
     standardInput = System.in
 }
 
-mainClassName = "Administration"
+mainClassName = "server"
 

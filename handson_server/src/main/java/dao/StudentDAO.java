@@ -117,9 +117,15 @@ public class StudentDAO implements StudentDAOInterface {
 
     @Override
     public void saveStudent(Student student) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        //testing:
+      //  Logger.debug (student.toString());
+        
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+ 
     @Override
     public Student getStudent(String username) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -10,13 +10,13 @@
 var clicker = document.getElementById("clicker");
 var modal = document.getElementById("modal");
 
-clicker.onclick = function() {
-    modal.style.display = "block";
-};
-
-window.onclick = function() {
-    modal.style.display = "none";
-};
+//clicker.onclick = function() {
+//    modal.style.display = "block";
+//};
+//
+//window.onclick = function() {
+//    modal.style.display = "none";
+//};
 
 
 // MODULE CODE BELOW
@@ -35,11 +35,13 @@ module.factory('signInDAO', function ($resource) {
 module.controller('StudentController', function (registerDAO, signInDAO, $sessionStorage, $window) {
 
     this.signInMessage = "Please sign in to continue.";
-
+this.signUpMessage="signUp";
     this.registerStudent = function (student) {
+        
         registerDAO.save(null, student,
                 // success callback
                         function () {
+                          
                             $window.location = "signIn.html";
                         },
                         // error callback

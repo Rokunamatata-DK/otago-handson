@@ -148,6 +148,20 @@ public class Student implements Comparable<Student>  {
     public Object getStaffID() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String toString() {
+//        this.userName = username;
+//        this.password = password;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.cellNumber = cellNumber;
+//        this.id = studentID;
+//        this.highSchool = highschool;
+//        this.gender = malefemale;    
+return "student object:"+  this.userName+ this.firstName+ this.lastName+this.password;
+    }
  
 }
 
