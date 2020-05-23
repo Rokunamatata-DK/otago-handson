@@ -13,9 +13,24 @@ import java.util.List;
  */
 public class Department implements Comparable<Department>{
     private String departmentName;
-    private List<Application> applications;
     private String departmentID;
+    private String description;
 
+    public String getDepartmentID() {
+        return departmentID;
+    }
+
+    public void setDepartmentID(String departmentID) {
+        this.departmentID = departmentID;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     
     public Department(String departmentName) {
         this.departmentName = departmentName;
@@ -37,11 +52,4 @@ public class Department implements Comparable<Department>{
     }
 
 
-    public List<Application> getRanking() {
-        return applications;
-    }
-
-    public void setRanking(List<Application> ranking) {
-        this.applications = ranking;
-    }
 }

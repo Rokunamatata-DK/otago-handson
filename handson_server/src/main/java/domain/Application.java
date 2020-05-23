@@ -5,7 +5,9 @@
  */
 package domain;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.sql.Date;
+import java.util.List;
 
 /**
  *
@@ -13,27 +15,53 @@ import java.util.Date;
  */
 public class Application {
     private String studentid;
-    private Department department;
-    private String appNumber;
-
-
+    private String departmentid;
+    private String ranking;
+    private String status;
     private String description;
     private Date date;
-    
-    public Application(String studentid, Department department, String description, Date date) {
+
+    public Application(String studentid, String department, String ranking, String description, Date date) {
         this.studentid = studentid;
-        this.department = department;
+        this.departmentid = department;
+        this.ranking = ranking;
         this.description = description;
         this.date = date;
     }
 
-    //testing 
     public Application() {
-         this.studentid = "test1";
-       
-        
     }
     
+    public String getStudentid() {
+        return studentid;
+    }
+
+    public void setStudentid(String studentid) {
+        this.studentid = studentid;
+    }
+
+    public String getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(String ranking) {
+        this.ranking = ranking;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Application(String studentid, String department, String description, Date date) {
+        this.studentid = studentid;
+        this.departmentid = department;
+        this.description = description;
+        this.date = date;
+    }
     
 
 
@@ -45,12 +73,12 @@ public class Application {
         this.studentid = student;
     }
 
-    public Department getDepartment() {
-        return department;
+    public String getDepartment() {
+        return departmentid;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartment(String department) {
+        this.departmentid = department;
     }
 
     public String getDescription() {

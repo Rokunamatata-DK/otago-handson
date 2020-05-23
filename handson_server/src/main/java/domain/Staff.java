@@ -5,8 +5,6 @@
  */
 package domain;
 
-import java.util.List;
-
 /**
  *
  * @author Dominic
@@ -26,13 +24,14 @@ public class Staff implements Comparable<Staff>{
     }
 
     public Staff(String username, String password, String firstName, String lastname, String email, String cellnumber, String gender, String id) {
-        this.userName = userName;
+        this.userName = username;
         this.password = password;
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.lastName = lastname;
         this.email = email;
-        this.cellNumber = cellNumber;
-        this.staffID = staffID;
+        this.cellNumber = cellnumber;
+        this.gender = gender;
+        this.staffID = id;
     }
 
     public String getStaffID() {
@@ -66,31 +65,19 @@ public class Staff implements Comparable<Staff>{
     public void setGender(String gender) {
         this.gender = gender;
     }
-    private List<Department> departments;
     
-    public Staff(String firstName, String lastName, String email, String cellNumber, List<Department> departments, String staffID) {
+    public Staff(String firstName, String lastName, String email, String cellNumber, String staffID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.cellNumber = cellNumber;
-        this.departments = departments;
         this.staffID = staffID;
     }
 
-    public Staff(String userName, String password, String firstName, String lastName, String email, String cellNumber, String staffID) {
-        this.userName = userName;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.cellNumber = cellNumber;
-        this.staffID = staffID;
-    }
-    
     @Override
     public int compareTo(Staff o) {
         return this.email.compareTo(o.getEmail());
-// throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
@@ -126,11 +113,7 @@ public class Staff implements Comparable<Staff>{
         this.cellNumber = cellNumber;
     }
 
-    public List<Department> getDepartments() {
-        return departments;
-    }
-
-    public void setDepartments(List<Department> departments) {
-        this.departments = departments;
+    public void add(Staff staff) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

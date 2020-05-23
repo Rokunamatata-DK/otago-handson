@@ -30,7 +30,6 @@ public class StudentDAO implements StudentDAOInterface {
 
    
     
-   @Override
     public Collection<Student> getAll() {
             return students.values();
     }
@@ -56,64 +55,94 @@ public class StudentDAO implements StudentDAOInterface {
         return null;
     }
 
+//    @Override
+//    public Student getByUsername(String username) {
+//     for(int i = 0; i<students.size(); i++){
+//            if (students.get(i).getUserName().equals(username)){
+//                return students.get(i);
+//            }
+//        }
+//        return null;
+//    }
+//
+//    @Override
+//    public int delete(String id) {
+//        for(int i = 0; i<students.size(); i++){
+//            if (students.get(i).getStudentID().equals(id)){
+//                students.remove(i);
+//            }
+//        }
+//        return 1;
+//    }
+//
+//    @Override
+//    public boolean exists(String id) {
+//        for(int i = 0; i<students.size(); i++){
+//            if (students.get(i).getStudentID().equals(id)){
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+//
+//    @Override
+//    public int updateItem(String id, Student updated_account) {
+////        for(int i = 0; i<students.size(); i++){
+////            if (students.get(i).getStudentID().equals(id)){
+////                students.put(i, updated_account);
+////            }
+////        }
+//       return 1;
+//    }
+//
+//    @Override
+//    public Boolean validateCredentials(String username, String password) {
+//        for(int i = 0; i<students.size(); i++){
+//            if (students.get(i).getUserName().equals(username)){
+//                if (students.get(i).getPassword().equals(password)){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
+//
+//    @Override
+//    public int saveStudent(Student student, String email) {
+//        //TODO validate
+//        
+//        students.put( email,student );
+//       return 1;
+//    }
+
     @Override
-    public Student getByUsername(String username) {
-     for(int i = 0; i<students.size(); i++){
-            if (students.get(i).getUserName().equals(username)){
-                return students.get(i);
-            }
-        }
-        return null;
+    public void saveStudent(Student student) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int delete(String id) {
-        for(int i = 0; i<students.size(); i++){
-            if (students.get(i).getStudentID().equals(id)){
-                students.remove(i);
-            }
-        }
-        return 1;
+    public Student getStudent(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean exists(String id) {
-        for(int i = 0; i<students.size(); i++){
-            if (students.get(i).getStudentID().equals(id)){
-                return true;
-            }
-        }
-        return false;
+    public void delete(Student pro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Student> getRankedListStudents(String DepartmentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Student> getListStudents(String DepartmentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int updateItem(String id, Student updated_account) {
-//        for(int i = 0; i<students.size(); i++){
-//            if (students.get(i).getStudentID().equals(id)){
-//                students.put(i, updated_account);
-//            }
-//        }
-       return 1;
-    }
-
-    @Override
-    public Boolean validateCredentials(String username, String password) {
-        for(int i = 0; i<students.size(); i++){
-            if (students.get(i).getUserName().equals(username)){
-                if (students.get(i).getPassword().equals(password)){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override
-    public int saveStudent(Student student, String email) {
-        //TODO validate
-        
-        students.put( email,student );
-       return 1;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

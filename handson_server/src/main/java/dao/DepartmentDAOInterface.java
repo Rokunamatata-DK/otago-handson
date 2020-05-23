@@ -5,25 +5,19 @@
  */
 package dao;
 
-import domain.Staff;
+import domain.Department;
 import java.util.List;
 
 /**
  *
  * @author vincenttoailoa
  */
-public interface StaffDAOInterface {
+public interface DepartmentDAOInterface {
     
-    List<Staff> getAll();
+    int createDepartment(Department department);
 
-    int delete(String id);
+    int delete(String departmentName);
 
-    Staff getByEmail(String email);
-    
-    Staff getByID(String id);
-
-    int saveStaff(Staff staff);
-    
-    
+    List<Department> getDepartmentList();
     
 }

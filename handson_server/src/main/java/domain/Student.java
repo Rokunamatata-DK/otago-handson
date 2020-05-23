@@ -5,16 +5,15 @@
  */
 package domain;
  
-//import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
-//import org.springframework.stereotype.Repository;
- 
+import java.util.Date;
+
 /**
  *
- * @author Dominic
+ * @author Vincent Toailoa
  */
 
 public class Student implements Comparable<Student>  {
+    
     private String userName;
     private String password;
     private String firstName;
@@ -24,58 +23,54 @@ public class Student implements Comparable<Student>  {
     private String id;
     private String highSchool;
     private String gender;
-//    private List<Application> applications;
+    private String letter;
+    private Date signUpDate;
 
-//    public Student() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
+    public Date getSignUpDate() {
+        return signUpDate;
+    }
 
-//    public Student(String userName, String password, String firstName, String lastName, String email, String cellNumber, String id, String highSchool, String gender, List<Application> applications) {
-//        this.userName = userName;
-//        this.password = password;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//        this.cellNumber = cellNumber;
-//        this.id = id;
-//        this.highSchool = highSchool;
-//        this.gender = gender;
-//        this.applications = applications;
-//    }
+    public void setSignUpDate(Date signUpDate) {
+        this.signUpDate = signUpDate;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLetter() {
+        return letter;
+    }
+
+    public void setLetter(String letter) {
+        this.letter = letter;
+    }
 
     public Student() {
-     this.userName = "test1";
-        this.password = "test1";
-        this.firstName = "test1";
-        this.lastName = "test1";
-        this.email = "test1";
-        this.cellNumber = "test1";
-        this.id = "test1";
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public Student(String username, String password, String firstName, String lastName, String email, String cellNumber, String studentID, String highschool, String malefemale) {
+        this.userName = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.cellNumber = cellNumber;
+        this.id = studentID;
+        this.highSchool = highschool;
+        this.gender = malefemale;    
+        
+    }
     
-    
-    
-    
-//    public Student(@JsonProperty("username")String userName, @JsonProperty("password")String password, 
-//            @JsonProperty("firstname")String firstName, @JsonProperty("lastname")String lastName, 
-//            @JsonProperty("email")String email, @JsonProperty("cell")String cellNumber, 
-//            @JsonProperty("id")String studentID, @JsonProperty("highschool")String highSchool, 
-//            @JsonProperty("gender")String gender) {
-//        this.userName = userName;
-//        this.password = password;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.email = email;
-//        this.cellNumber = cellNumber;
-//        this.id = studentID;
-//        this.highSchool = highSchool;
-//        this.gender = gender;       
-//    }
-     @Override
+    @Override
     public int compareTo(Student o) {
         return this.email.compareTo(o.getEmail());
-// throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public String getUserName() {
@@ -149,14 +144,10 @@ public class Student implements Comparable<Student>  {
     public void setStudentID(String studentID) {
         this.id = studentID;
     }
- 
-//    public List<Application> getApplications() {
-//        return applications;
-//    }
-// 
-//    public void setApplications(List<Application> applications) {
-//        this.applications = applications;
-//    }
+
+    public Object getStaffID() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
  
 }
 
