@@ -21,7 +21,7 @@ window.onclick = function() {
 
 // MODULE CODE BELOW
 // create a new module, and load the other pluggable modules
-var module = angular.module('ShoppingApp', ['ngResource', 'ngStorage']);
+var module = angular.module('handsonAPP', ['ngResource', 'ngStorage']);
 
 module.factory('registerDAO', function ($resource) {
     return $resource('/api/register');
