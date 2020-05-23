@@ -24,23 +24,33 @@ public class Student implements Comparable<Student>  {
     private String id;
     private String highSchool;
     private String gender;
-    private List<Application> applications;
+//    private List<Application> applications;
 
 //    public Student() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
 
-    public Student(String userName, String password, String firstName, String lastName, String email, String cellNumber, String id, String highSchool, String gender, List<Application> applications) {
-        this.userName = userName;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.cellNumber = cellNumber;
-        this.id = id;
-        this.highSchool = highSchool;
-        this.gender = gender;
-        this.applications = applications;
+//    public Student(String userName, String password, String firstName, String lastName, String email, String cellNumber, String id, String highSchool, String gender, List<Application> applications) {
+//        this.userName = userName;
+//        this.password = password;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//        this.cellNumber = cellNumber;
+//        this.id = id;
+//        this.highSchool = highSchool;
+//        this.gender = gender;
+//        this.applications = applications;
+//    }
+
+    public Student() {
+     this.userName = "test1";
+        this.password = "test1";
+        this.firstName = "test1";
+        this.lastName = "test1";
+        this.email = "test1";
+        this.cellNumber = "test1";
+        this.id = "test1";
     }
     
     
@@ -140,13 +150,13 @@ public class Student implements Comparable<Student>  {
         this.id = studentID;
     }
  
-    public List<Application> getApplications() {
-        return applications;
-    }
- 
-    public void setApplications(List<Application> applications) {
-        this.applications = applications;
-    }
+//    public List<Application> getApplications() {
+//        return applications;
+//    }
+// 
+//    public void setApplications(List<Application> applications) {
+//        this.applications = applications;
+//    }
  
 }
 
