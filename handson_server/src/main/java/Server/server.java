@@ -35,15 +35,19 @@ public class server extends Jooby{
     public static void main(String[] args) throws Exception {
         System.out.println("\nStarting Server.");
         server servers = new server();
+        
+        
         CompletableFuture.runAsync(() -> {
             servers.start();
         });
+        
         servers.onStarted(() -> {
             System.out.println("\nPress Enter to stop the server.");
         });
+        
         // wait for user to hit the Enter key
         System.in.read();
-        System.exit(0);
+      //  System.exit(0);
     }
 }
 

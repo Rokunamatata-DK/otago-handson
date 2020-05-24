@@ -34,5 +34,7 @@ run {
     standardInput = System.in
 }
 
-mainClassName = "Server.server"
+
+
+    mainClassName = "Server.server"
 
