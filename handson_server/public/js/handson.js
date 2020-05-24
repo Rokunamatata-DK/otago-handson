@@ -42,7 +42,7 @@ module.controller('StudentController', function (registerDAO, signInDAO, $sessio
                 // success callback
                         function () {
 
-                            $window.location = "signIn.html";
+                            //$window.location = "signIn.html";
                         },
                         // error callback
                                 function (error) {

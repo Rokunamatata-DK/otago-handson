@@ -21,9 +21,9 @@ public class studentModule extends Jooby {
     public studentModule(StudentDAOInterface arg_dao) {
         dao = arg_dao;
         post("/api/register", (req, rsp) -> {
-              
+           // System.out.println(req.get("*"));
             Student a = req.body().to(Student.class);
-            
+            System.out.println("test:!!->"+a.toString());
            
            //TODO dao function
            dao.saveStudent(a);

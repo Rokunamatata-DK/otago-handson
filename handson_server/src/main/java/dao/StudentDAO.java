@@ -120,7 +120,7 @@ public class StudentDAO implements StudentDAOInterface {
         
         //testing:
       //  Logger.debug (student.toString());
-        
+        System.out.println("test student"+student.toString());
         
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
